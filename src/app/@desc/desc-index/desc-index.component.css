@@ -1,0 +1,14 @@
+.desc-index-text-container {
+  border-radius: 36px;
+}
+
+.desc-index-text-container-inner {
+  padding: 10vh;
+  border-radius: 36px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 4.6875vh;
+  line-height: 6.4453125vh;
+  white-space: no-wrap;
+  color: #3C3732;
+}

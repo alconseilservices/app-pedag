@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,
+		initial-scale=1">
+		<style>
+			.container {
+				background-color: green;
+				position: relative;
+				width: 100%;
+				padding-top: 56.25%; /* 16:9 Aspect Ratio */
+			}
+
+			.text {
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				text-align: center;
+				font-size: 25px;
+				color: white;
+			}
+			.example {
+				background: white;
+				color: green;
+				font-weight:bold;
+				font-size: 40px;
+				padding-bottom: 20px;
+      }
+      .aspect-ratio-container {
+        background-color: red;
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        max-height: calc(100%- 140px) !important;
+      }
+      .container {
+        position:  absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        text-align: center;
+        font-size: 20px;
+        color: white;
+      }
+      .header {
+        background-color: green;
+        height: 70px;
+        width: 100%;
+      }
+      .footer {
+        background-color: yellow;
+        height: 70px;
+        width: 100%;
+      }
+		</style>
+		</head>
+	<body>
+		<div class="container">
+			<div class="text">
+				<div class = "example">GeeksforGeeks</div>
+				<p>A Computer Science portal for geeks. It
+				contains well written, well thought and well
+				explained computer science and programming
+				articles, quizzes etc. Also it contains several
+				coding questions to practice and develop your
+				skills in programming.</p>
+			</div>
+		</div>
+	</body>
+</html>

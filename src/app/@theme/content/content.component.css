@@ -1,0 +1,24 @@
+.content-container {
+  position: absolute;
+  width: 76.927083333333333vw;
+  height: 70.25vh;
+  top: 9.666666666666667vh;
+  left: 11.458333333333333vw;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+}
+
+.content-container-relative {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.theme-content-close-btn {
+  width: 2.29166667vw;
+  height: 2.29166667vw;
+  position: absolute;
+  top: 1vh;
+  right: 1vh;
+}

@@ -1,0 +1,8 @@
+.theme-layer-stack-container {
+  height: calc(100vh - 5.835vh);
+}
+
+.theme-layers-stack {
+  position: relative !important;
+  height: 100%;
+}

@@ -1,0 +1,16 @@
+appId: com.sncf.edu.mobilite
+productName: SNCFMobilite
+copyright: Copyright © year ${author}
+directories:
+  output: dist
+  buildResources: build
+files:
+  - "www/**"
+  - "main.js"
+  - "!**/node_modules/**/*"
+  - "**/node_modules/electron-aspectratio/**/*"
+win:
+  target:
+    - target: portable
+      arch:
+        - ia32

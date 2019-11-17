@@ -1,0 +1,39 @@
+<div class="postit-container" [style.margin-right]="marginHorizontal + 'px'"
+  [style.margin-bottom]="marginVertical + 'px'">
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <div class="postit-color-badge" *ngIf="!editableColorBadge" [style.background-color]="getBadgeColor()"></div>
+    <div class="postit-color-badge-container" *ngIf="editableColorBadge" fxLayout="row" fxLayoutAlign="start center">
+      <div class="postit-color-badge" [style.border]="getBorder()" [style.background-color]="getBadgeColor()"></div>
+      <div class="postit-color-badge-arrow"></div>
+      <div #dropdowncontent class="postit-color-badge-dropdown">
+        <div class="postit-color-badge-dropdown-item" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px"
+             (click)="setIdeeToNewCategorie()">
+          <div class="postit-color-badge postit-color-badge-default"></div>
+          <span class="app-title-verysmall postit-color-badge-title"></span>
+        </div>
+        <div class="postit-color-badge-dropdown-item" (click)="setIdeeToNewCategorie(categ)"
+          *ngFor="let categ of categorieList" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+          <div class="postit-color-badge"   [style.background-color]="categ.color" [style.border]="getCategBorderStyle(categ)"></div>
+          <span class="app-title-verysmall postit-color-badge-title">{{ categ.name }}</span>
+        </div>
+      </div>
+    </div>
+    <input *ngIf="categorie" maxlength="18" [(ngModel)]="categorie.name" [disabled]="categorie.name === 'Autre'"
+      class="app-title-small postit-categorie-title" placeholder="Touchez ici..." />
+    <div fxFlex></div>
+    <img class="postit-quit" *ngIf="idee || categorie && categorie.name !== 'Autre'" (click)="deletePostIt()"
+      src="assets/icons/quit_btn.svg">
+  </div>
+  <textarea #postittext *ngIf="idee" maxlength="120"
+    oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' (input)="onInput($event)"
+    [(ngModel)]="idee.name" class="app-text-medium postit-content"
+    placeholder="Touchez pour écrire"></textarea>
+  <div class="app-text-small postit-categorie-counter" *ngIf="categorie && !ideesListOpened">
+    {{ count() + ' idées dans cette catégorie'}}</div>
+  <div *ngIf="ideesListOpened" fxLayout="column">
+    <div *ngFor="let item of fetchListOfIdees()" class="app-text-medium postit-categorie-counter" [innerHTML]="item.name"></div>
+  </div>
+  <div *ngIf="categorie" class="postit-categorie-arrow-lister-idees"
+        [style.background]="computeListArrow()"
+        (click)="openCloseListedIdees()"></div>
+</div>

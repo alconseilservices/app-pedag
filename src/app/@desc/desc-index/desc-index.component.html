@@ -1,0 +1,26 @@
+<div appScene>
+    <app-theme-header
+        showIcon="true"
+        appSceneElement
+        title="Votre mission"
+        sceneElWidth="100%"
+        sceneElHeight="10.44921875vh"></app-theme-header>
+    <div appSceneElement
+         sceneElWidthRatio="1.7906976744186"
+         sceneElHeight="67.1875vh"
+         sceneElTop="89.55078125vh"
+         sceneElCenterV="true"
+         sceneElCenterH="true"
+         class="desc-index-text-container"
+         appWallpaper="./assets/images/test_decorC1.png">
+         <div class="desc-index-text-container-inner"
+              [innerHTML]="mission.descriptionTexte"></div>
+    </div>
+    <app-theme-prevnext
+        appSceneElement
+        sceneElWidth="18vh"
+        sceneElHeight="9vh"
+        sceneElTop="89.55078125vh"
+        sceneElCenterH="true"
+        [previousRoute]="'intro'" [nextRoute]="'mission'"></app-theme-prevnext>
+</div>

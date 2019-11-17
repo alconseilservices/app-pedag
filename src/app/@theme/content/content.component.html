@@ -1,0 +1,6 @@
+<div class="content-container">
+  <div class="content-container-relative">
+      <img *ngIf="showCloseBtn" (click)="close()" class="theme-content-close-btn" src="assets/icons/quit_btn.svg">
+      <ng-content></ng-content>
+  </div>
+</div>

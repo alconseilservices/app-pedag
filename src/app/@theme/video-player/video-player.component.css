@@ -1,0 +1,7 @@
+.app-theme-video-player-container {
+  box-shadow: 0px 0px 20px rgba(60, 55, 50, 0.5);
+}
+.app-theme-video-player-container-inner {
+  height: 100%;
+  width: 100%;;
+}

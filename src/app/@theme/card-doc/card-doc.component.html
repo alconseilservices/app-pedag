@@ -1,0 +1,8 @@
+<div [style.height]="height" [style.width]="width" fxLayout="column-reverse" fxLayoutAlign="start center">
+  <div class="theme-card-doc-title app-title-small">
+    {{activDoc.docTitle}}
+  </div>
+  <div (click)="docClicked()" class="theme-card-doc-img" fxLayout="row" fxLayoutAlign="center center">
+    <div class="theme-card-doc-idx app-title-verybig" [ngClass]="{'theme-card-doc-idx-visited': activDoc.visited}">{{ activDoc.visited ? '' : index + 1 }}</div>
+  </div>
+</div>

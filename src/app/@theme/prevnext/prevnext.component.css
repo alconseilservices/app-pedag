@@ -1,0 +1,8 @@
+.prevnext-base {
+  /*width: 5.55555555555556vw;*/
+  height: 80%;
+}
+
+.prevnext-missing {
+  opacity: 0;
+}

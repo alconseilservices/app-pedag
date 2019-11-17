@@ -1,0 +1,14 @@
+<div class="stepper-container">
+  <div class="stepper-previous"></div>
+  <div class="stepper-next"></div>
+  <div class="stepper-line"></div>
+  <div class="stepper-index-badge-container" fxLayout="row" fxLayoutAlign="space-between">
+    <div class="stepper-index-badge" (click)="visitStep(step)" *ngFor="let step of missionCourse?.steps"
+          [ngClass]="{'stepper-index-badge-activ': activStep.index &#62;= step.index}">
+      {{step.index}}
+      <div class="stepper-index-badge-title" *ngIf="activStep.index === step.index">
+        <span class="stepper-index-badge-title-text app-title-verysmall">{{step.common.title}}</span>
+      </div>
+    </div>
+  </div>
+</div>

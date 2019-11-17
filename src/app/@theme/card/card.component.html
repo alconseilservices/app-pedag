@@ -1,0 +1,8 @@
+<div class="theme-card-container" [style.background-image]="safeBgImageStyle()">
+  <div class="theme-card-header-container"></div>
+  <!-- <div class="theme-card-header-badge" *ngIf="mission.level">{{mission.level}}</div> -->
+  <div class="theme-card-header-badge-picto" [style.background-image]="safeLevelBgImage()" *ngIf="mission.level"></div>
+  <div class="theme-card-header-title">{{mission.name}}</div>
+  <div class="theme-card-header-btn-intro" (click)="goToMission(true)" *ngIf="mission.mandatory">Tronc commun</div>
+  <div class="theme-card-header-btn-mission" (click)="goToMission(false)" >Mission</div>
+</div>

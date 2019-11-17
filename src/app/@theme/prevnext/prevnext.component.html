@@ -1,0 +1,6 @@
+<div fxLayout="row" fxLayoutAlign="space-around center">
+  <img (click)="changeRoute('previous')" class="prevnext-base"
+       [ngClass]="{'prevnext-missing': !showBtn('previous')}" src="./assets/icons/previous.png">
+  <img (click)="changeRoute('next')" class="prevnext-base"
+       [ngClass]="{'prevnext-missing': !showBtn('next')}" src="./assets/icons/next.png">
+</div>
