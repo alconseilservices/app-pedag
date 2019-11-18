@@ -5,7 +5,7 @@ let aspect = require("electron-aspectratio")
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
-let mainWindowHandler
+// let mainWindowHandler
 
 function createWindow () {
   // Create the browser window.
@@ -19,8 +19,8 @@ function createWindow () {
     }
   })
 
-  mainWindowHandler = new aspect(mainWindow);
-  mainWindowHandler.setRatio(8, 5, 10);
+  // mainWindowHandler = new aspect(mainWindow);
+  // mainWindowHandler.setRatio(8, 5, 10);
 
   // DOT NOT DELETE
   // this is target code for aspect ration handling.

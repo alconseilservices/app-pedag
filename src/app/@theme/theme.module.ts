@@ -12,7 +12,6 @@ import { PrevnextComponent } from './prevnext/prevnext.component';
 import { ConfirmPopinComponent } from './confirm-popin/confirm-popin.component';
 import { TabBtnComponent } from './tab-btn/tab-btn.component';
 import { TabBtnGrpComponent } from './tab-btn-grp/tab-btn-grp.component';
-import { EditablePostitComponent } from './editable-postit/editable-postit.component';
 import { FormsModule } from '@angular/forms';
 import { DocCardComponent } from './card-doc/card-doc.component';
 import { BulleComponent } from './bulle/bulle.component';
@@ -41,7 +40,6 @@ import { DimSyncDirective } from './directives/dim-sync.directive';
     ConfirmPopinComponent,
     TabBtnComponent,
     TabBtnGrpComponent,
-    EditablePostitComponent,
     DocCardComponent,
     BulleComponent,
     CardSolutionComponent,
@@ -72,7 +70,6 @@ import { DimSyncDirective } from './directives/dim-sync.directive';
     ConfirmPopinComponent,
     TabBtnComponent,
     TabBtnGrpComponent,
-    EditablePostitComponent,
     DocCardComponent,
     BulleComponent,
     CardSolutionComponent,

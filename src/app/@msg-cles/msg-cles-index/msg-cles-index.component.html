@@ -2,19 +2,29 @@
     <app-theme-header
         showIcon="true"
         appSceneElement
-        title="Mission terminée !"
+        title="Souvenez-vous"
         sceneElWidth="100%"
         sceneElHeight="10.44921875vh"></app-theme-header>
-      <app-theme-progress appSceneElement
+    <app-theme-progress appSceneElement
         sceneElWidth="85.5555555555556vw"
         sceneElHeight="5.37109375vh"
         sceneElTop="12.79296875vh"
         sceneElCenterH="true"></app-theme-progress>
+    <div appSceneElement
+        sceneElHeight="65vh"
+        sceneElWidth="84.6527777777778vw"
+        sceneElTop="22vh"
+        sceneElCenterH="true"
+        style="overflow-y: auto;">
+        <div class="msg-cles-grid-container">
+            <app-theme-card-msg-cle [activMessage]="message" [index]="idx"
+              *ngFor="let message of mission.messagesCles; let idx = index"></app-theme-card-msg-cle>
+        </div>
+      </div>
     <app-theme-prevnext
         appSceneElement
         sceneElWidth="18vh"
         sceneElHeight="9vh"
         sceneElTop="89.55078125vh"
-        sceneElCenterH="true"
-        [previousRoute]="computePrevious()" [nextRoute]="'msg-cles'"></app-theme-prevnext>
+        sceneElCenterH="true" [previousRoute]="'fin'"></app-theme-prevnext>
 </div>

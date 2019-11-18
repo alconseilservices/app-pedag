@@ -113,3 +113,15 @@ export interface MissionCourseStepCommon {
   hint?: string;
 }
 
+/**
+ * Représente la spécification d'un message clé.
+ */
+export interface MessageCle extends ImageWindow, Visitable {
+  /**
+   * Texte du message clé
+   * @required
+   * @html_support
+   */
+  message: string;
+}
+

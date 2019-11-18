@@ -1,0 +1,7 @@
+.msg-cles-grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-items: center;
+  align-items: center;
+  height: 100%;
+}

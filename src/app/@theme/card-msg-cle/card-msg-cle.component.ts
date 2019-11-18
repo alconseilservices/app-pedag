@@ -10,7 +10,6 @@ import { AssetService } from 'src/app/@commons/util/asset.service';
 })
 export class CardMsgCleComponent implements OnInit {
 
-  @Input() missionId: string;
   @Input() index: number;
   @Input() activMessage: MessageCle;
 
@@ -22,13 +21,14 @@ export class CardMsgCleComponent implements OnInit {
   background(): SafeStyle {
     if (this.activMessage.visited) {
       return this.sanitizer.bypassSecurityTrustStyle(
-        `#FFFFFF`
+        `${this.activMessage.wx} ${this.activMessage.wy} ` +
+        `no-repeat url('./assets/images/'${this.activMessage.wimg})` +
+        `,rgba(255, 255, 255, 0.6)`
       );
     } else {
       return this.sanitizer.bypassSecurityTrustStyle(
         `${this.activMessage.wx} ${this.activMessage.wy} ` +
-        `no-repeat url(${this.asset.resolveLocation('./assets/images/', this.missionId, this.activMessage.wimg)})` +
-        `,rgba(253, 255, 254, 0.3)`
+        `no-repeat url('./assets/images/'${this.activMessage.wimg})`
       );
     }
   }

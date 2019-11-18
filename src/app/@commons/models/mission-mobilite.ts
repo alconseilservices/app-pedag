@@ -1,4 +1,5 @@
 import { MissionMobiliteEtape } from './mission-mobilite-etape';
+import { MessageCle } from './generics';
 
 /**
  * Représente une spécification pour une mission mibilite
@@ -20,4 +21,9 @@ export interface MissionMobilite {
    * @required
    */
   etapes?: MissionMobiliteEtape[];
+  /**
+   * Liste des messages clés
+   * @required
+   */
+  messagesCles: MessageCle[];
 }
