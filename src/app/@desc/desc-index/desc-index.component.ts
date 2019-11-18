@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MissionMobilite } from 'src/app/@commons/models/mission-mobilite';
 import { MissionsService } from 'src/app/@commons/services/missions.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-desc-index',
@@ -11,7 +12,7 @@ export class DescIndexComponent implements OnInit {
 
   mission: MissionMobilite;
 
-  constructor(private missionService: MissionsService) {
+  constructor(private missionService: MissionsService, private router: Router) {
   }
 
   ngOnInit() {

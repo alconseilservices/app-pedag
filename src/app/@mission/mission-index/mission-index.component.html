@@ -10,12 +10,20 @@
                         sceneElHeight="5.37109375vh"
                         sceneElTop="12.79296875vh"
                         sceneElCenterH="true"></app-theme-progress>
+    <div appSceneElement
+         sceneElWidthRatio="1.80469897209985"
+         sceneElHeight="66.50390625vh"
+         sceneElTop="20.41015625vh"
+         sceneElCenterH="true"
+         class="mission-index-etape-container">
+      <router-outlet></router-outlet>
+    </div>
     <app-theme-prevnext
         appSceneElement
         sceneElWidth="18vh"
         sceneElHeight="9vh"
         sceneElTop="89.55078125vh"
         sceneElCenterH="true"
-        [previousRoute]="'desc'" [nextRoute]="'mission'"></app-theme-prevnext>
+        [previousRoute]="computePrevious()" [nextRoute]="computeNext()"></app-theme-prevnext>
 </div>
 

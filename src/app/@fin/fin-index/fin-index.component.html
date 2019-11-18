@@ -1,0 +1,27 @@
+<div appScene>
+    <app-theme-header
+        showIcon="true"
+        appSceneElement
+        title="Mission terminée !"
+        sceneElWidth="100%"
+        sceneElHeight="10.44921875vh"></app-theme-header>
+      <app-theme-progress appSceneElement
+        sceneElWidth="85.5555555555556vw"
+        sceneElHeight="5.37109375vh"
+        sceneElTop="12.79296875vh"
+        sceneElCenterH="true"></app-theme-progress>
+      <app-theme-video-player
+        appSceneElement
+        sceneElWidthRatio="1.7669757489301"
+        sceneElHeight="68.45703125vh"
+        sceneElTop="20.5078125vh"
+        videoPath="./assets/videos/vid.mp4"
+        sceneElCenterH="true"></app-theme-video-player>
+    <app-theme-prevnext
+        appSceneElement
+        sceneElWidth="18vh"
+        sceneElHeight="9vh"
+        sceneElTop="89.55078125vh"
+        sceneElCenterH="true"
+        [previousRoute]="computePrevious()" [nextRoute]="'msg-cles'"></app-theme-prevnext>
+</div>

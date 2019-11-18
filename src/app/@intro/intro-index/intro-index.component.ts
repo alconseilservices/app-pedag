@@ -21,8 +21,6 @@ export class IntroIndexComponent implements OnInit {
   ngOnInit() {
     this.missionService.missionMobilite()
       .subscribe((mission: MissionMobilite) => this.mission = mission);
-    this.missionService.missions()
-      .subscribe((mission: MissionCourse) => this.missions.push(mission));
   }
 
   getVideoRelativeUrl() {

@@ -6,7 +6,9 @@ const routes: Routes = [
   { path: 'home', loadChildren: './@home/home.module#HomeModule' },
   { path: 'intro', loadChildren: './@intro/intro.module#IntroModule' },
   { path: 'desc', loadChildren: './@desc/desc.module#DescModule' },
-  { path: 'mission', loadChildren: './@mission/mission.module#MissionModule' }
+  { path: 'mission', loadChildren: './@mission/mission.module#MissionModule' },
+  { path: 'fin', loadChildren: './@fin/fin.module#FinModule' },
+  { path: 'msg-cles', loadChildren: './@msg-cles/msg-cles.module#MsgClesModule' }
 ];
 
 @NgModule({
