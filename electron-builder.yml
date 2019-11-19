@@ -1,6 +1,7 @@
 appId: com.sncf.edu.mobilite
 productName: SNCFMobilite
 copyright: Copyright © year ${author}
+electronVersion: 7.1.1
 directories:
   output: dist
   buildResources: build
