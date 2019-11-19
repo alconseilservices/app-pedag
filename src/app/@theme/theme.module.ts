@@ -25,6 +25,7 @@ import { VideoPlayerComponent } from './video-player/video-player.component';
 import { WallpaperDirective } from './directives/wallpaper.directive';
 import { ProgressComponent } from './progress/progress.component';
 import { DimSyncDirective } from './directives/dim-sync.directive';
+import { InsertComponent } from './insert/insert.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { DimSyncDirective } from './directives/dim-sync.directive';
     VideoPlayerComponent,
     WallpaperDirective,
     ProgressComponent,
-    DimSyncDirective
+    DimSyncDirective,
+    InsertComponent
   ],
   imports: [
     CommonModule,
@@ -81,7 +83,8 @@ import { DimSyncDirective } from './directives/dim-sync.directive';
     VideoPlayerComponent,
     WallpaperDirective,
     ProgressComponent,
-    DimSyncDirective
+    DimSyncDirective,
+    InsertComponent
   ]
 })
 export class ThemeModule { }

@@ -1,0 +1,13 @@
+.app-theme-insert-container {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.app-theme-insert-notifier {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 0px 0px 50px 50px;
+}
