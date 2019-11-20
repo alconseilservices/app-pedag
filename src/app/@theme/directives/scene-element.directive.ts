@@ -1,4 +1,4 @@
-import { Directive, Input, OnInit, ElementRef } from '@angular/core';
+import { Directive, Input, OnInit, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appSceneElement]'
@@ -9,6 +9,8 @@ export class SceneElementDirective implements OnInit {
 
   @Input() sceneElTop: string;
   @Input() sceneElLeft: string;
+
+  @Input() sceneElInsertX: boolean;
 
   @Input() sceneElCenterH: boolean;
   @Input() sceneElCenterV: boolean;
@@ -22,7 +24,9 @@ export class SceneElementDirective implements OnInit {
   @Input() sceneElPadLeft: string;
   @Input() sceneElPadRight: string;
 
-  constructor(private el: ElementRef) {}
+  constructor(private el: ElementRef) {
+
+  }
 
   ngOnInit() {
 
@@ -33,9 +37,13 @@ export class SceneElementDirective implements OnInit {
     }
 
     this.element.style.position = 'absolute';
-
     this.element.style.top = this.sceneElTop;
-    this.element.style.left = this.sceneElLeft;
+
+    if (this.sceneElInsertX) {
+      this.element.style.left = '100vw';
+    } else {
+      this.element.style.left =  this.sceneElLeft;
+    }
 
     if (this.sceneElWidth) {
       this.element.style.width = this.sceneElWidth;
@@ -70,6 +78,35 @@ export class SceneElementDirective implements OnInit {
       this.element.style.transform += ' translateY(-50%)';
     }
 
+  }
+
+  @HostListener('click', ['$event.target'])
+  clickInside(div) {
+    if (this.element.contains(div) && this.sceneElInsertX) {
+      this.element.style.left =  this.sceneElLeft;
+    }
+  }
+
+  @HostListener('document:click', ['$event.target'])
+  clickOutside(div) {
+    if (!this.element.contains(div) && this.sceneElInsertX) {
+      this.element.style.left =  '100vw';
+    }
+  }
+
+  /**
+   * manage left offset
+   */
+  manageLeftOffset(): void {
+    if (this.sceneElInsertX) {
+      if (this.element.style.left !== '100vw') {
+        this.element.style.left = '100vw';
+      } else {
+        this.element.style.left =  this.sceneElLeft;
+      }
+    } else {
+      this.element.style.left =  this.sceneElLeft;
+    }
   }
 
 }
