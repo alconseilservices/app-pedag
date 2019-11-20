@@ -10,7 +10,7 @@ const routes: Routes = [
     children: [
       {
         path: 'image-interactive',
-        component: ImageInteractiveComponent
+        component: ImageInteractiveComponent,
       }
     ]
   }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MissionsService } from 'src/app/@commons/services/missions.service';
 import { MissionMobilite } from 'src/app/@commons/models/mission-mobilite';
+import { MissionMobiliteEtape } from 'src/app/@commons/models/mission-mobilite-etape';
 
 @Component({
   selector: 'app-mission-index',
@@ -12,17 +13,20 @@ export class MissionIndexComponent implements OnInit {
 
   etapeIndex: number;
   mission: MissionMobilite;
+  etape: MissionMobiliteEtape;
 
   constructor(
-    private router: Router,
     private route: ActivatedRoute,
     private service: MissionsService) {
       this.service.missionMobilite()
-        .subscribe((mission: MissionMobilite) => this.mission = mission);
+        .subscribe((mission: MissionMobilite) => {
+          this.mission = mission;
+          this.etapeIndex = parseInt(this.route.snapshot.params.id, 10);
+          this.etape = this.mission.etapes[this.etapeIndex];
+        });
     }
 
   ngOnInit() {
-    this.etapeIndex = parseInt(this.route.snapshot.params.id, 10);
   }
 
   computeNext(): string {

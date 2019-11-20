@@ -72,7 +72,11 @@ export interface MissionMobiliteEtape {
 /**
  * Spécification d'une étape d'image d'interactive
  */
-export interface MissionMibiliteImgInteractive extends MissionMobiliteEtape, Visitable {
+export interface MissionMobiliteImgInteractive extends MissionMobiliteEtape, Visitable {
+  /**
+   * nom de l'image de fond assets/images/${backgroundImage}.png
+   */
+  backgroundImage: string;
   /**
    * Liste des indices à analyser.
    * @required
