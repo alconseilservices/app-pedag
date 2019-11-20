@@ -1,7 +1,6 @@
 .app-theme-insert-container {
   position: relative;
   background-color: rgba(255, 255, 255, 0.95);
-  border: ridge;
   transition: left 0.5s ease-in-out;
 }
 
@@ -11,4 +10,18 @@
   left: -8.7890625vh;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.app-theme-insert-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 50px;
+  margin-right: 50px;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 3.3203125vh;
+  line-height: 4.4921875vh;
+  letter-spacing: 0.25px;
+  color: #3C3732;
 }

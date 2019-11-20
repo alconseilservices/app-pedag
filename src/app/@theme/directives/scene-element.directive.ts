@@ -84,6 +84,7 @@ export class SceneElementDirective implements OnInit {
   clickInside(div) {
     if (this.element.contains(div) && this.sceneElInsertX) {
       this.element.style.left =  this.sceneElLeft;
+      this.el.nativeElement.dispatchEvent(new CustomEvent('enterScene'));
     }
   }
 
@@ -91,6 +92,7 @@ export class SceneElementDirective implements OnInit {
   clickOutside(div) {
     if (!this.element.contains(div) && this.sceneElInsertX) {
       this.element.style.left =  '100vw';
+      this.el.nativeElement.dispatchEvent(new CustomEvent('exitScene'));
     }
   }
 
