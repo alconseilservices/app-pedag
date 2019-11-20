@@ -9,7 +9,7 @@ const routes: Routes = [
     component: MissionIndexComponent,
     children: [
       {
-        path: 'etape-image-interactive',
+        path: 'image-interactive',
         component: ImageInteractiveComponent
       }
     ]

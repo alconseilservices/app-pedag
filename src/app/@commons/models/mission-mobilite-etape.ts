@@ -13,7 +13,7 @@ export interface MissionMobiliteStepCommon {
    * Titre de l'étape de mission.
    * @required
    */
-  title: string;
+  title?: string;
   /**
    * icon header
    */
@@ -25,6 +25,31 @@ export interface MissionMobiliteStepCommon {
 }
 
 /**
+ * Implémente la spécification des informations communes de l'étape introduction.
+ */
+export class CommonStepImageInteractive implements MissionMobiliteStepCommon {
+  /**
+   * @inheritdoc
+   */
+  hint = undefined;
+  /**
+   * @inheritdoc
+   */
+  path = 'image-interactive';
+  /**
+   * @inheritdoc
+   */
+  title = 'Découverte de la mission';
+  /**
+   * Renvoit une instance de la classe des informations communes de l'étape présentation.
+   * @returns `CommonStepIntroduction`
+   */
+  static instance(): CommonStepImageInteractive {
+    return new CommonStepImageInteractive();
+  }
+}
+
+/**
  * Spécification d'une étape de mission mobilite
  */
 export interface MissionMobiliteEtape {
@@ -33,94 +58,21 @@ export interface MissionMobiliteEtape {
    */
   common: MissionMobiliteStepCommon;
   /**
+   * le texte de l'encart
+   */
+  insertText: string;
+  /**
    * any
    */
   [key: string]: any;
 }
 
-/**
- * Implémente la spécification des informations communes de l'étape introduction.
- */
-export class CommonStepIntroduction implements MissionMobiliteStepCommon {
-  /**
-   * @inheritdoc
-   */
-  hint = undefined;
-  /**
-   * @inheritdoc
-   */
-  path = 'intro';
-  /**
-   * @inheritdoc
-   */
-  title = 'Découverte de la mission';
-  /**
-   * Renvoit une instance de la classe des informations communes de l'étape présentation.
-   * @returns `CommonStepIntroduction`
-   */
-  static instance(): CommonStepIntroduction {
-    return new CommonStepIntroduction();
-  }
-}
 
-/**
- * Spécification d'une étape d'introduction
- */
-export interface MissionMibiliteIntroduction extends MissionMobiliteEtape {
-  /**
-   * nom de la vidéo d'introduction ./assets/videos/${introVideoName}
-   * @required
-   */
-  introVideoName: string;
-}
-
-/**
- * Implémente la spécification des informations communes de l'étape description.
- */
-export class CommonStepDescription implements MissionMobiliteStepCommon {
-  /**
-   * @inheritdoc
-   */
-  hint = undefined;
-  /**
-   * @inheritdoc
-   */
-  path = 'intro';
-  /**
-   * @inheritdoc
-   */
-  title = 'Découverte de la mission';
-  /**
-   * Renvoit une instance de la classe des informations communes de l'étape présentation.
-   * @returns `CommonStepIntroduction`
-   */
-  static instance(): CommonStepIntroduction {
-    return new CommonStepIntroduction();
-  }
-}
-
-/**
- * Spécification d'une étape de description
- */
-export interface MissionMibiliteDescription extends MissionMobiliteEtape {
-  /**
-   * description de la mission
-   * supporte les tags html
-   * @required
-   */
-  description: string;
-}
 
 /**
  * Spécification d'une étape d'image d'interactive
  */
 export interface MissionMibiliteImgInteractive extends MissionMobiliteEtape, Visitable {
-  /**
-   * texte de l'encart
-   * supporte les tags html
-   * @required
-   */
-  insertText: string;
   /**
    * Liste des indices à analyser.
    * @required

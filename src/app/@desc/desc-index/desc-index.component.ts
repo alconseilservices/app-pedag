@@ -20,4 +20,8 @@ export class DescIndexComponent implements OnInit {
       .subscribe((mission: MissionMobilite) => this.mission = mission);
   }
 
+  nextRoute(): string {
+    return 'etapes/0/' + this.mission.etapes[0].common.path;
+  }
+
 }

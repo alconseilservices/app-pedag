@@ -22,20 +22,20 @@ export class MissionIndexComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.etapeIndex = this.route.snapshot.params.id;
+    this.etapeIndex = parseInt(this.route.snapshot.params.id, 10);
   }
 
   computeNext(): string {
-    if (this.etapeIndex && this.etapeIndex < this.mission.etapes.length) {
-      return 'mission/' + (this.etapeIndex++);
+    if (!isNaN(this.etapeIndex) && (this.etapeIndex + 1 ) < this.mission.etapes.length) {
+      return 'etapes/' + (this.etapeIndex + 1) +  '/' + this.mission.etapes[this.etapeIndex + 1].common.path;
     } else {
       return 'fin';
     }
   }
 
   computePrevious(): string {
-    if (this.etapeIndex && this.etapeIndex > 1) {
-      return 'mission/' + (this.etapeIndex--);
+    if (!isNaN(this.etapeIndex) && this.etapeIndex > 1) {
+      return 'etapes/' + (this.etapeIndex - 1) +  '/' + this.mission.etapes[this.etapeIndex - 1].common.path;
     } else {
       return 'desc';
     }

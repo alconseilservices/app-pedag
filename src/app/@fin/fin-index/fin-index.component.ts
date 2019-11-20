@@ -20,7 +20,7 @@ export class FinIndexComponent implements OnInit {
   }
 
   computePrevious(): string {
-    return 'mission/' +  this.mission.etapes.length;
+    return 'etapes/' +  (this.mission.etapes.length - 1) +  '/' + this.mission.etapes[this.mission.etapes.length - 1].common.path;
   }
 
 }
