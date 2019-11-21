@@ -31,7 +31,7 @@ export class MissionIndexComponent implements OnInit {
 
   computeNext(): string {
     if (!isNaN(this.etapeIndex) && (this.etapeIndex + 1 ) < this.mission.etapes.length) {
-      return 'etapes/' + (this.etapeIndex + 1) +  '/' + this.mission.etapes[this.etapeIndex + 1].common.path;
+      return 'etapes/' + (this.etapeIndex + 1) +  '/' + this.mission.etapes[this.etapeIndex + 1].path;
     } else {
       return 'fin';
     }
@@ -39,7 +39,7 @@ export class MissionIndexComponent implements OnInit {
 
   computePrevious(): string {
     if (!isNaN(this.etapeIndex) && this.etapeIndex > 1) {
-      return 'etapes/' + (this.etapeIndex - 1) +  '/' + this.mission.etapes[this.etapeIndex - 1].common.path;
+      return 'etapes/' + (this.etapeIndex - 1) +  '/' + this.mission.etapes[this.etapeIndex - 1].path;
     } else {
       return 'desc';
     }

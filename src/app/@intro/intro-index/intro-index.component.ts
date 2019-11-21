@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MissionCourse } from 'src/app/@commons/models/mission-course';
 import { MissionMobilite } from 'src/app/@commons/models/mission-mobilite';
 import { MissionsService } from 'src/app/@commons/services/missions.service';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -12,9 +11,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class IntroIndexComponent implements OnInit {
 
   mission: MissionMobilite;
-
   isMandatory = true;
-  missions: MissionCourse[] = [];
 
   constructor(private missionService: MissionsService, private sanitizer: DomSanitizer) { }
 
@@ -24,6 +21,6 @@ export class IntroIndexComponent implements OnInit {
   }
 
   getVideoRelativeUrl() {
-    return './assets/videos/' + this.mission.introNomVideo;
+    return './assets/videos/' + this.mission.videoIntro;
   }
 }

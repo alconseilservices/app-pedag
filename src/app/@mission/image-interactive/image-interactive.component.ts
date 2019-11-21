@@ -4,7 +4,7 @@ import { MissionMobiliteImgInteractive } from 'src/app/@commons/models/mission-m
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { MissionsService } from 'src/app/@commons/services/missions.service';
-import { Indice } from 'src/app/@commons/models/step-collecteindices';
+import { Indice } from 'src/app/@commons/models/generics';
 
 @Component({
   selector: 'app-mission-image-interactive',

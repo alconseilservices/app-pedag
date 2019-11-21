@@ -5,18 +5,12 @@ import { LayerStackComponent } from './layer-stack/layer-stack.component';
 import { HeaderComponent } from './header/header.component';
 import { LayerComponent } from './layer/layer.component';
 import { ImgBgComponent } from './img-bg/img-bg.component';
-import { CardComponent } from './card/card.component';
-import { StepperComponent } from './stepper/stepper.component';
 import { ContentComponent } from './content/content.component';
 import { PrevnextComponent } from './prevnext/prevnext.component';
 import { ConfirmPopinComponent } from './confirm-popin/confirm-popin.component';
 import { TabBtnComponent } from './tab-btn/tab-btn.component';
 import { TabBtnGrpComponent } from './tab-btn-grp/tab-btn-grp.component';
 import { FormsModule } from '@angular/forms';
-import { DocCardComponent } from './card-doc/card-doc.component';
-import { BulleComponent } from './bulle/bulle.component';
-import { CardSolutionComponent } from './card-solution/card-solution.component';
-import { CardMsgCleComponent } from './card-msg-cle/card-msg-cle.component';
 import { WideImgBgComponent } from './wide-img-bg/wide-img-bg.component';
 import { SceneDirective } from './directives/scene.directive';
 import { SceneElementDirective } from './directives/scene-element.directive';
@@ -34,17 +28,11 @@ import { InsertComponent } from './insert/insert.component';
     HeaderComponent,
     LayerComponent,
     ImgBgComponent,
-    CardComponent,
-    StepperComponent,
     ContentComponent,
     PrevnextComponent,
     ConfirmPopinComponent,
     TabBtnComponent,
     TabBtnGrpComponent,
-    DocCardComponent,
-    BulleComponent,
-    CardSolutionComponent,
-    CardMsgCleComponent,
     WideImgBgComponent,
     SceneDirective,
     SceneElementDirective,
@@ -65,17 +53,11 @@ import { InsertComponent } from './insert/insert.component';
     LayerStackComponent,
     LayerComponent,
     ImgBgComponent,
-    CardComponent,
-    StepperComponent,
     ContentComponent,
     PrevnextComponent,
     ConfirmPopinComponent,
     TabBtnComponent,
     TabBtnGrpComponent,
-    DocCardComponent,
-    BulleComponent,
-    CardSolutionComponent,
-    CardMsgCleComponent,
     WideImgBgComponent,
     SceneElementDirective,
     SceneDirective,

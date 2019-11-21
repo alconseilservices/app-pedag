@@ -1,52 +1,17 @@
 import { Indice, Visitable } from './generics';
 
 /**
- * Représente la spécification des informations communes d'une étape de mission.
+ *
  */
-export interface MissionMobiliteStepCommon {
+export enum Path {
   /**
-   * Chemin d'activation du `Router` Angular.
-   * @required
+   *
    */
-  path: string;
+  ETAPE_IMAGE_INTERACTIVE = 'image-interactive',
   /**
-   * Titre de l'étape de mission.
-   * @required
+   *
    */
-  title?: string;
-  /**
-   * icon header
-   */
-  icon?: string;
-  /**
-   * Texte de suggestion affiché dans l'entête de l'application.
-   */
-  hint?: string;
-}
-
-/**
- * Implémente la spécification des informations communes de l'étape introduction.
- */
-export class CommonStepImageInteractive implements MissionMobiliteStepCommon {
-  /**
-   * @inheritdoc
-   */
-  hint = undefined;
-  /**
-   * @inheritdoc
-   */
-  path = 'image-interactive';
-  /**
-   * @inheritdoc
-   */
-  title = 'Découverte de la mission';
-  /**
-   * Renvoit une instance de la classe des informations communes de l'étape présentation.
-   * @returns `CommonStepIntroduction`
-   */
-  static instance(): CommonStepImageInteractive {
-    return new CommonStepImageInteractive();
-  }
+  ETAPE_QCM = 'qcm'
 }
 
 /**
@@ -56,7 +21,7 @@ export interface MissionMobiliteEtape {
   /**
    * header title
    */
-  common: MissionMobiliteStepCommon;
+  path: Path;
   /**
    * le texte de l'encart
    */

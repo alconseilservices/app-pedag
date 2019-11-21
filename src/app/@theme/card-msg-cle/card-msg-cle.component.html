@@ -1,5 +1,0 @@
-<div class="theme-card-msg-cle-container" (click)="msgSelected()" [style.background]="background()"
-    fxLayout="row" fxLayoutAlign="center center">
-  <div class="theme-card-msg-cle-badge app-title-verybig" *ngIf="!activMessage.visited">{{index + 1}}</div>
-  <div class="theme-card-msg-cle-text app-text" *ngIf="activMessage.visited">{{activMessage.message}}</div>
-</div>

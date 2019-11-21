@@ -6,16 +6,16 @@ import { MessageCle } from './generics';
  */
 export interface MissionMobilite {
   /**
-   * nom de la vidéo mp4 d'introduction ./assets/videos/${introNomVideo}
+   * nom de la vidéo mp4 d'introduction ./assets/videos/${videoIntro}
    * @required
    */
-  introNomVideo: string;
+  videoIntro: string;
   /**
    * description de la mission
    * supporte les tags html
    * @required
    */
-  descriptionTexte: string;
+  description: string;
   /**
    * Etapes de la mission de mobilité
    * @required

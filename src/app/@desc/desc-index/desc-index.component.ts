@@ -21,7 +21,7 @@ export class DescIndexComponent implements OnInit {
   }
 
   nextRoute(): string {
-    return 'etapes/0/' + this.mission.etapes[0].common.path;
+    return 'etapes/0/' + this.mission.etapes[0].path;
   }
 
 }
