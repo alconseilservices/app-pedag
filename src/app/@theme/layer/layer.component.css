@@ -1,9 +1,0 @@
-.layer-container {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-
-.layer-container-relative {
-  position: relative !important;
-}
