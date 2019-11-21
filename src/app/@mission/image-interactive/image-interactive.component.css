@@ -3,3 +3,42 @@
   height: 100%;
   width: 100%;
 }
+
+.etapes-image-interactive-container-bg {
+  width: 100%;
+  height: 100%;
+}
+
+.etapes-image-interactive-indice {
+  height: 5.2734375vh;
+  width: 5.2734375vh;
+  position: absolute;
+  /* opacity: 0; */
+}
+
+.etapes-image-interactive-indice-visited {
+  opacity: 1 !important;
+}
+
+.etapes-image-interactive-modal {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 30px rgba(32, 32, 32, 0.5);
+  border-radius: 30px;
+}
+
+.etapes-image-interactive-modal-close {
+  height: 3.8vh;
+}
+
+.etapes-image-interactive-modal-text {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 2.9296875vh;
+  line-height: 4.00390625vh;
+  text-align: center;
+  color: #3C3732;
+}
+
+.etapes-image-interactive-modal-img-holder {
+  overflow: hidden;
+}

@@ -62,12 +62,14 @@ export interface MissionMobiliteEtape {
    */
   insertText: string;
   /**
+   * liste des indices
+   */
+  indices?: Indice[];
+  /**
    * any
    */
   [key: string]: any;
 }
-
-
 
 /**
  * Spécification d'une étape d'image d'interactive
@@ -77,9 +79,4 @@ export interface MissionMobiliteImgInteractive extends MissionMobiliteEtape, Vis
    * nom de l'image de fond assets/images/${backgroundImage}.png
    */
   backgroundImage: string;
-  /**
-   * Liste des indices à analyser.
-   * @required
-   */
-  indices: Indice[];
 }

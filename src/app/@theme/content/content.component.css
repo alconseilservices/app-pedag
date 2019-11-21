@@ -1,11 +1,14 @@
 .content-container {
   position: absolute;
-  width: 76.927083333333333vw;
-  height: 70.25vh;
-  top: 9.666666666666667vh;
-  left: 11.458333333333333vw;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 15px;
+  width: 86.0416666666667vw;
+  height: 67.5400390625vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #FFFFFF;
+  opacity: 0.95;
+  box-shadow: 0px 0px 30px rgba(32, 32, 32, 0.5);
+  border-radius: 30px;
 }
 
 .content-container-relative {

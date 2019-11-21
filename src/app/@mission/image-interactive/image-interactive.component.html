@@ -1,3 +1,42 @@
-<div class="etapes-image-interactive-container" [style.background]="background()">
-
+<div class="etapes-image-interactive-container">
+  <img class="etapes-image-interactive-container-bg"
+       src="./assets/images/{{etape.backgroundImage}}.png">
+  <img class="etapes-image-interactive-indice"
+       src="./assets/icons/interrest_point_anchor.png"
+       *ngFor="let indice of etape.indices"
+       [ngClass]="{'etapes-image-interactive-indice-visited': indice.visited}"
+       [style.left]="computeX(indice)" [style.top]="computeY(indice)"
+       (click)="showIndice(indice)">
+</div>
+<div  appSceneElement *ngIf="activeIndice"
+      sceneElWidthRatio="1.79147207241075"
+      sceneElHeight="67.5400390625vh"
+      sceneElCenterV="true"
+      sceneElCenterH="true"
+      class="etapes-image-interactive-modal">
+      <img appSceneElement
+           sceneElTop="15px"
+           sceneElRight="15px"
+           class="etapes-image-interactive-modal-close"
+           src="./assets/icons/cross.png"
+           (click)="closeModal()">
+      <div appSceneElement
+          sceneElWidth="75.8676351896691%"
+          sceneElHeight="71.42753864172%"
+          sceneElTop="7%"
+          sceneElCenterH="true"
+          class="etapes-image-interactive-modal-img-holder">
+          <img src="./assets/images/{{activeIndice.image.file}}.png"
+               [style.position]="'relative'"
+               [style.top.%]="activeIndice.image.top"
+               [style.left.%]="activeIndice.image.left"
+               [style.height.%]="activeIndice.image.height">
+      </div>
+      <div appSceneElement
+           sceneElWidth="90%"
+           sceneElHeight="15%"
+           sceneElTop="80%"
+           sceneElCenterH="true"
+           class="etapes-image-interactive-modal-text"
+           [innerHTML]="activeIndice.text"></div>
 </div>

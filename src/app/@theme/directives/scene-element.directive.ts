@@ -9,8 +9,10 @@ export class SceneElementDirective implements OnInit {
 
   @Input() sceneElTop: string;
   @Input() sceneElLeft: string;
+  @Input() sceneElRight: string;
 
   @Input() sceneElInsertX: boolean;
+  @Input() sceneElInsertY: boolean;
 
   @Input() sceneElCenterH: boolean;
   @Input() sceneElCenterV: boolean;
@@ -43,6 +45,12 @@ export class SceneElementDirective implements OnInit {
       this.element.style.left = '100vw';
     } else {
       this.element.style.left =  this.sceneElLeft;
+    }
+
+    if (this.sceneElInsertY) {
+      this.element.style.right = '100vw';
+    } else {
+      this.element.style.right =  this.sceneElRight;
     }
 
     if (this.sceneElWidth) {

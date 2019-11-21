@@ -1,3 +1,9 @@
+export interface ImageScaler {
+  file: string;
+  top: number;
+  left: number;
+  height: number;
+}
 /**
  * Représente les données nécessaires pour afficher une image en fond d'une `div`.
  */
@@ -67,14 +73,14 @@ export interface Indice extends Visitable {
    * Titre de l'indice
    * @required
    */
-  title: string;
+  title?: string;
   /**
    * Image à afficher.
    *
    * L'image référencée doit se trouver sous le chemin suivant :
    * `assets/images/${mission.id}/${step.image}`
    */
-  image?: string;
+  image?: ImageScaler;
   /**
    * Image à afficher.
    *
@@ -85,12 +91,12 @@ export interface Indice extends Visitable {
   /**
    * Pas spécifier encore.
    */
-  video: string;
+  video?: string;
   /**
    * Texte de l'indice.
    * @required
    */
-  text: string;
+  text?: string;
 }
 
 /**
