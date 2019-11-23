@@ -6,3 +6,16 @@
 .prevnext-missing {
   opacity: 0;
 }
+
+.prevnext-custom-btn {
+  line-height: 6.4453125vh;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 2.34375vh;
+  text-align: center;
+  letter-spacing: 0.15px;
+  width: 364px;
+  height: 6.4453125vh;
+  color: white;
+  border-radius: 2.34375vh;
+}

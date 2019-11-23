@@ -1,6 +1,12 @@
-<div fxLayout="row" fxLayoutAlign="space-around center">
+<div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="center center">
   <img (click)="changeRoute('previous')" class="prevnext-base"
-       [ngClass]="{'prevnext-missing': !showBtn('previous')}" src="./assets/icons/previous.png">
+       *ngIf="showBtn('previous')"
+       src="./assets/icons/previous.png">
   <img (click)="changeRoute('next')" class="prevnext-base"
-       [ngClass]="{'prevnext-missing': !showBtn('next')}" src="./assets/icons/next.png">
+       *ngIf="showBtn('next')"
+       src="./assets/icons/next.png">
+  <div class="prevnext-custom-btn"
+       *ngIf="customBtnLabel"
+       [ngStyle]="{'background-color': computeCustomBtnBgColor()}"
+       (click)="customBtnClick()">{{customBtnLabel}}</div>
 </div>

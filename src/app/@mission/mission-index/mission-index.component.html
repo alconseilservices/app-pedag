@@ -15,7 +15,7 @@
          sceneElHeight="66.50390625vh"
          sceneElTop="20.41015625vh"
          sceneElCenterH="true"
-         class="mission-index-etape-container">
+         [ngStyle]="{'box-shadow': showBoxShadow()}">
       <router-outlet></router-outlet>
     </div>
     <app-theme-insert appSceneElement
@@ -23,13 +23,19 @@
                       sceneElHeight="66.6015625vh"
                       sceneElTop="20.3125vh"
                       sceneElLeft="37.2916666666667vw"
-                      sceneElInsertX="true" [insertText]="etape.insertText"></app-theme-insert>
+                      sceneElInsertX="true"
+                      [insertText]="etape.insertText"
+                      (opened)="insertOpened=true;"></app-theme-insert>
     <app-theme-prevnext
         appSceneElement
-        sceneElWidth="18vh"
+        sceneElWidth="90vw"
         sceneElHeight="9vh"
         sceneElTop="89.55078125vh"
         sceneElCenterH="true"
-        [previousRoute]="computePrevious()" [nextRoute]="computeNext()"></app-theme-prevnext>
+        [customBtnEnabled]="insertOpened"
+        [customBtnLabel]="computeCustomBtn()"
+        [previousRoute]="computePrevious()"
+        [nextRoute]="computeNext()"
+        (customBtnClicked)="onClickCustomBtn()"></app-theme-prevnext>
 </div>
 

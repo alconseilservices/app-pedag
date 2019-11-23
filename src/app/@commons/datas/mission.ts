@@ -34,6 +34,39 @@ export const Mission: MissionMobilite = {
           }
         }
       ]
+    },
+    {
+      path: Path.ETAPE_QCM_INDEX,
+      insertText: `
+        Suite au message reçu, vous devez adapter votre itinéraire pour aller directement
+         à l'arrêt La Plaine Stade de France pour 15h15.<br><br>Que faîtes-vous ?
+      `,
+      landingImage: 'S052',
+      choices: [
+        {
+          value: 'Vous restez dans votre train jusqu\'à Paris.',
+          goodChoice: false,
+          score: 1
+        },
+        {
+          value: 'Vous changez à Ermont Eaubonne pour prendre la ligne H.',
+          goodChoice: false,
+          score: 1
+        },
+        {
+          value: 'Vous changez à Ermont Eaubonne pour prendre la ligne J.',
+          goodChoice: true,
+          score: 1
+        }
+      ],
+      imageGoodChoice: 'test_decorB2',
+      faceGoodChoice: 'face_man',
+      faceNameGoodChoice: 'Yanis',
+      hintGoodChoice: 'Ça y est on arrive ! Préparez-vous à descendre.',
+      imageBadChoice: 'test_decorB',
+      faceBadChoice: 'face',
+      faceNameBadChoice: 'Inès',
+      hintBadChoice: 'Regardons le plan à nouveau. Il y a peut-être un itinéraire avec moins de changements.'
     }
   ],
   messagesCles: [

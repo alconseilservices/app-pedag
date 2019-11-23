@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, ViewChild, ElementRef, Input } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-theme-insert',
@@ -10,6 +10,7 @@ export class InsertComponent implements OnInit {
   visited = false;
   insertBtn = 'insert_btn_notif';
   @Input() insertText: string;
+  @Output() opened: EventEmitter<void> = new EventEmitter();
 
   @ViewChild('insertBtnElm') el: ElementRef;
 
@@ -22,6 +23,7 @@ export class InsertComponent implements OnInit {
   clickInside() {
     this.visited = true;
     this.insertBtn = 'insert_btn_opened';
+    this.opened.emit(null);
   }
 
   @HostListener('exitScene')

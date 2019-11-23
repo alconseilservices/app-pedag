@@ -1,29 +1,3 @@
-export interface ImageScaler {
-  file: string;
-  top: number;
-  left: number;
-  height: number;
-}
-/**
- * Représente les données nécessaires pour afficher une image en fond d'une `div`.
- */
-export interface ImageWindow {
-  /**
-   * URI de l'image de fond (taille requise 1784px × 970px)
-   * @required
-   */
-  wimg: string;
-  /**
-   * Abscisse en px du coin haut gauche de l'image
-   * @required
-   */
-  wx: string;
-  /**
-   * Ordonne en px du coin haut gauche de l'image
-   * @required
-   */
-  wy: string;
-}
 /**
  * Permet d'assigner un ordre pour un objet dans une collection d'objets ordonnés.
  */
@@ -54,7 +28,64 @@ export interface Visitable {
    */
   visited?: boolean;
 }
-
+/**
+ *
+ */
+export interface ImageScaler {
+  /**
+   *
+   */
+  file: string;
+  /**
+   *
+   */
+  top: number;
+  /**
+   *
+   */
+  left: number;
+  /**
+   *
+   */
+  height: number;
+}
+/**
+ *
+ */
+export interface Choice extends Activate {
+  /**
+   *
+   */
+  value: string;
+  /**
+   *
+   */
+  goodChoice: boolean;
+  /**
+   *
+   */
+  score: number;
+}
+/**
+ * Représente les données nécessaires pour afficher une image en fond d'une `div`.
+ */
+export interface ImageWindow {
+  /**
+   * URI de l'image de fond (taille requise 1784px × 970px)
+   * @required
+   */
+  wimg: string;
+  /**
+   * Abscisse en px du coin haut gauche de l'image
+   * @required
+   */
+  wx: string;
+  /**
+   * Ordonne en px du coin haut gauche de l'image
+   * @required
+   */
+  wy: string;
+}
 /**
  * Représente la spécification d'un indice.
  */

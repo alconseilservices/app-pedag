@@ -8,6 +8,8 @@ export class SceneElementDirective implements OnInit {
   element: any;
 
   @Input() sceneElTop: string;
+
+  @Input() preservePosition: boolean;
   @Input() sceneElLeft: string;
   @Input() sceneElRight: string;
 
@@ -38,7 +40,9 @@ export class SceneElementDirective implements OnInit {
       this.element = this.el.nativeElement;
     }
 
-    this.element.style.position = 'absolute';
+    if (!this.preservePosition) {
+      this.element.style.position = 'absolute';
+    }
     this.element.style.top = this.sceneElTop;
 
     if (this.sceneElInsertX) {

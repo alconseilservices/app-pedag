@@ -1,0 +1,12 @@
+.qcm-decision-container {
+  background: white;
+  width: 100%;
+  height: 100%;
+}
+
+.qcm-decision-choice {
+  background: #A1006B;
+  opacity: 0.9;
+  border: 1.07421875vh solid #FFFFFF;
+  border-radius: 29px;
+}

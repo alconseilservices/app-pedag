@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MissionsService } from 'src/app/@commons/services/missions.service';
 import { MissionMobilite } from 'src/app/@commons/models/mission-mobilite';
 import { Router } from '@angular/router';
@@ -10,8 +10,12 @@ import { Router } from '@angular/router';
 })
 export class PrevnextComponent implements OnInit {
 
+  @Input() customBtnLabel: string;
+  @Input() customBtnEnabled: boolean;
+  @Input() customBtnRoute: string;
   @Input() nextRoute: string;
   @Input() previousRoute: string;
+  @Output() customBtnClicked: EventEmitter<void> = new EventEmitter();
   mission: MissionMobilite;
 
   constructor(private service: MissionsService, private router: Router) { }
@@ -34,6 +38,18 @@ export class PrevnextComponent implements OnInit {
       return this.previousRoute !==  undefined;
     } else {
       return this.nextRoute !==  undefined;
+    }
+  }
+
+  customBtnClick(): void {
+    this.customBtnClicked.emit(null);
+  }
+
+  computeCustomBtnBgColor(): string {
+    if (this.customBtnEnabled) {
+      return '#A1006B';
+    } else {
+      return '#3C3732';
     }
   }
 
