@@ -16,6 +16,12 @@ export class QcmResultatComponent implements OnInit {
   @Input() mission: MissionMobilite;
   @Input() etape: MissionMobiliteQcm;
   etapeIndex: number;
+  activeChoice: Choice;
+
+  choiceFaceImage: string;
+  choiceFaceName: string;
+  choiceImage: string;
+  choiceHintText: string;
 
   constructor(
     private service: MissionsService,
@@ -38,24 +44,26 @@ export class QcmResultatComponent implements OnInit {
   computeStepInfo(): void {
     this.etapeIndex = parseInt(this.route.parent.snapshot.params.id, 10);
     this.etape = this.mission.etapes[this.etapeIndex] as MissionMobiliteQcm;
+    this.activeChoice = this.etape.choices.find(c => c.activ);
+    if (this.activeChoice.goodChoice) {
+      this.choiceFaceImage = this.etape.faceGoodChoice;
+      this.choiceFaceName = this.etape.faceNameGoodChoice;
+      this.choiceImage = this.etape.imageGoodChoice;
+      this.choiceHintText = this.etape.hintGoodChoice;
+    } else {
+      this.choiceFaceImage = this.etape.faceBadChoice;
+      this.choiceFaceName = this.etape.faceNameBadChoice;
+      this.choiceImage = this.etape.imageBadChoice;
+      this.choiceHintText = this.etape.hintBadChoice;
+    }
   }
 
   ngOnInit() {
   }
 
   resultImage(): SafeStyle {
-    const choice = this.etape.choices.filter(c => c.activ)[0];
-    if (choice) {
-      if (choice.goodChoice) {
-        return this.sanitizer.bypassSecurityTrustStyle(
-          `url(./../../../assets/images/${this.etape.imageGoodChoice}.png) center / 100% no-repeat`);
-      } else {
-        return this.sanitizer.bypassSecurityTrustStyle(
-          `url(./../../../assets/images/${this.etape.imageBadChoice}.png) center / 100% no-repeat`);
-      }
-    } else {
-      return undefined;
-    }
+    return this.sanitizer.bypassSecurityTrustStyle(
+      `url(./../../../assets/images/${this.choiceImage}.png) center / 100% no-repeat`);
   }
 
 }

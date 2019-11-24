@@ -1,3 +1,14 @@
 <div class="etapes-qcm-resultat-container"
      [style.background]="resultImage()">
+  <div class="etapes-qcm-resultat-hint-container"
+       fxLayout="row"
+       fxLayoutAlign="start center"
+       fxLayoutGap="15px">
+    <img height="80%" src="./../../../assets/icons/{{choiceFaceImage}}.png">
+    <div class="etapes-qcm-resultat-hint-divider"></div>
+    <div fxLayout="column">
+      <div class="etapes-qcm-resultat-face-name">{{choiceFaceName}}</div>
+      <div class="etapes-qcm-resultat-hint-text">{{choiceHintText}}</div>
+    </div>
+  </div>
 </div>
