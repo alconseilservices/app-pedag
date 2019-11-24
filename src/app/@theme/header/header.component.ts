@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { UserConfirmedAction, ConfirmedAction } from '../confirm-popin/confirm-popin.component';
 import { ConfirmPopinService } from '../confirm-popin/confirm-popin.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,10 @@ export class HeaderComponent implements OnInit {
 
   showQuitBtn = true;
 
-  constructor(private confirmPopinService: ConfirmPopinService) {}
+  constructor(
+    private confirmPopinService: ConfirmPopinService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
   }
@@ -36,15 +40,7 @@ export class HeaderComponent implements OnInit {
   }
 
   goToHome() {
-    this.confirmPopinService.popin({
-      type : ConfirmedAction.CHANGE_ROUTE,
-      message : 'Êtes-vous certain de vouloir revenir au menu principal ?',
-      route: ['/menu'],
-      response: false
-    } as UserConfirmedAction)
-    .subscribe((response: UserConfirmedAction) => {
-      this.confirmPopinService.popout();
-    });
+    this.router.navigate(['home']);
   }
 
   maximize(): void {

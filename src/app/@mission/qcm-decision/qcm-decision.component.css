@@ -5,16 +5,18 @@
 }
 
 .qcm-decision-choice {
-  background: url(./../../../assets/icons/deco_card_up.svg) left top / 25% no-repeat, url(./../../../assets/icons/deco_card_up.svg) right bottom / 25% no-repeat,#A1006B;
+  background: url(./../../../assets/icons/deco_card_up.svg) left top / 25% no-repeat,
+              url(./../../../assets/icons/deco_card_up.svg) right bottom / 25% no-repeat,#A1006B;
   opacity: 0.9;
   border: 1.07421875vh solid #FFFFFF;
-  border-radius: 29px;
+  border-radius: 2.83203125vh;
   position: relative;
   overflow: auto;
 }
 
 .qcm-decision-choice-activ {
-  background: url(./../../../assets/icons/deco_card_up_black.png) left top / 25% no-repeat, url(./../../../assets/icons/deco_card_up_black.png) right bottom / 25% no-repeat,white;
+  background: url(./../../../assets/icons/deco_card_up_black.png) left top / 25% no-repeat,
+              url(./../../../assets/icons/deco_card_up_black.png) right bottom / 25% no-repeat,white;
   border: 1.07421875vh solid black;
   z-index: 5 !important;
 }

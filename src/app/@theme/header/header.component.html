@@ -1,6 +1,6 @@
 <div class="theme-header-rec-bg" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
     <img *ngIf="!showIcon" class="theme-header-logo" src="assets/images/Nvx_logo_TN_2019_CMJN_complet 1.png">
-    <img *ngIf="showIcon" class="theme-header-icon" src="assets/icons/header_icon.png">
+    <img *ngIf="showIcon" (click)="goToHome()" class="theme-header-icon" src="assets/icons/header_icon.png">
     <div fxFlex></div>
     <div fxFlex fxLayout="row" *ngIf="title" fxLayoutAlign="center center">
         <div class="theme-header-title">{{title}}</div>

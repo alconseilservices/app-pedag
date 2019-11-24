@@ -55,10 +55,12 @@ export class MissionIndexComponent implements OnInit {
       }
     }
   }
-
+  /**
+   *
+   */
   computePrevious(): string {
     if (String(this.router.url).endsWith(Path.ETAPE_QCM_DECISION)) {
-      return 'etapes/' + this.etapeIndex +  '/' + Path.ETAPE_QCM_INDEX;
+      return 'etapes/' + this.etapeIndex +  '/' + Path.ETAPE_QCM_RESULTAT;
     } else if (!isNaN(this.etapeIndex) && this.etapeIndex > 0) {
       return 'etapes/' + (this.etapeIndex - 1) +  '/' + this.mission.etapes[this.etapeIndex - 1].path;
     } else {
