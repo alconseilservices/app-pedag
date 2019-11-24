@@ -44,9 +44,9 @@ export class QcmDecisionComponent implements OnInit {
   }
   /**
    *
-   * @param choice
    */
   selectChoice(choice: Choice): void {
+    this.etape.choices.forEach(c => c.activ = false);
     choice.activ = true;
   }
 

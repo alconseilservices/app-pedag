@@ -5,8 +5,36 @@
 }
 
 .qcm-decision-choice {
-  background: #A1006B;
+  background: url(./../../../assets/icons/deco_card_up.svg) left top / 25% no-repeat, url(./../../../assets/icons/deco_card_up.svg) right bottom / 25% no-repeat,#A1006B;
   opacity: 0.9;
   border: 1.07421875vh solid #FFFFFF;
   border-radius: 29px;
+  position: relative;
+  overflow: auto;
+}
+
+.qcm-decision-choice-activ {
+  background: url(./../../../assets/icons/deco_card_up_black.png) left top / 25% no-repeat, url(./../../../assets/icons/deco_card_up_black.png) right bottom / 25% no-repeat,white;
+  border: 1.07421875vh solid black;
+  z-index: 5 !important;
+}
+
+.qcm-decision-choice-activ > * {
+  color: black !important;
+}
+
+.qcm-decision-choice-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2vh;
+  left: 2vh;
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 3.90625vh;
+  line-height: 5.37109375vh;
+  text-align: center;
+  letter-spacing: 0.25px;
+  color: #FFFFFF;
 }
