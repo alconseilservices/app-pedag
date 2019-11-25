@@ -1,10 +1,14 @@
 import { MissionMobiliteEtape } from './mission-mobilite-etape';
-import { MessageCle } from './generics';
+import { MessageCle, ScoredVideo } from './generics';
 
 /**
  * Représente une spécification pour une mission mibilite
  */
 export interface MissionMobilite {
+  /**
+   *
+   */
+  obtainedScore: number;
   /**
    * nom de la vidéo mp4 d'introduction ./assets/videos/${videoIntro}
    * @required
@@ -20,10 +24,14 @@ export interface MissionMobilite {
    * Etapes de la mission de mobilité
    * @required
    */
-  etapes?: MissionMobiliteEtape[];
+  etapes: MissionMobiliteEtape[];
   /**
    * Liste des messages clés
    * @required
    */
   messagesCles: MessageCle[];
+  /**
+   *
+   */
+  endVideos: ScoredVideo[];
 }

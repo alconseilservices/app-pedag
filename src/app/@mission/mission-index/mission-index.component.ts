@@ -116,4 +116,8 @@ export class MissionIndexComponent implements OnInit {
     }
   }
 
+  computeProgress(): number {
+    return ((this.etapeIndex + 1) * 100) / this.mission.etapes.length;
+  }
+
 }

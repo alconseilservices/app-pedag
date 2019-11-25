@@ -2,6 +2,7 @@ import { MissionMobilite } from '../models/mission-mobilite';
 import { Path } from '../models/mission-mobilite-etape';
 
 export const Mission: MissionMobilite = {
+  obtainedScore: 0,
   videoIntro: '3_Fonctionnement_d_une_centrale_photovoltaique_1.mp4',
   description: `
       Aider Yanis et Inès dans leur itinéraire.<br><br>Pour cela,
@@ -126,6 +127,13 @@ export const Mission: MissionMobilite = {
       wx: '0',
       wy: '0',
       visited : false
+    }
+  ],
+  endVideos: [
+    {
+      file: 'vid',
+      minScore: 0,
+      maxScore: 10
     }
   ]
 };

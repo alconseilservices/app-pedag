@@ -20,7 +20,14 @@ export class FinIndexComponent implements OnInit {
   }
 
   computePrevious(): string {
-    return 'etapes/' +  (this.mission.etapes.length - 1) +  '/' + this.mission.etapes[this.mission.etapes.length - 1].path;
+    return 'etapes/' +  (this.mission.etapes.length - 1)
+            +  '/' + this.mission.etapes[this.mission.etapes.length - 1].path;
+  }
+
+  computeEndVideo(): string {
+    return this.mission.endVideos
+      .find(v => v.minScore <= this.mission.obtainedScore
+          && v.maxScore >= this.mission.obtainedScore).file;
   }
 
 }

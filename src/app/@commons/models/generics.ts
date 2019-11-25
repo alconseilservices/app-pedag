@@ -28,6 +28,20 @@ export interface Visitable {
    */
   visited?: boolean;
 }
+export interface ScoredVideo extends Visitable {
+  /**
+   *
+   */
+  file: string;
+  /**
+   *
+   */
+  minScore: number;
+  /**
+   *
+   */
+  maxScore: number;
+}
 /**
  *
  */

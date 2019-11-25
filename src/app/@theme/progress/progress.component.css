@@ -9,8 +9,9 @@
   position: absolute;
   background: linear-gradient(180deg, #A1006B 0%, rgba(161, 0, 107, 0.35) 100%);
   border-radius: 9.765625vh;
-  width: 90%;
+  width: 0%;
   height: 100%;
+  transition: width 1.2s linear;
 }
 
 .theme-progress-icon {
