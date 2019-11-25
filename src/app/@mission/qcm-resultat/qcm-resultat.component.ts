@@ -22,6 +22,7 @@ export class QcmResultatComponent implements OnInit {
   choiceFaceName: string;
   choiceImage: string;
   choiceHintText: string;
+  choiceStatusLogo: string;
 
   constructor(
     private service: MissionsService,
@@ -50,11 +51,13 @@ export class QcmResultatComponent implements OnInit {
       this.choiceFaceName = this.etape.faceNameGoodChoice;
       this.choiceImage = this.etape.imageGoodChoice;
       this.choiceHintText = this.etape.hintGoodChoice;
+      this.choiceStatusLogo = 'qcm_result_ok';
     } else {
       this.choiceFaceImage = this.etape.faceBadChoice;
       this.choiceFaceName = this.etape.faceNameBadChoice;
       this.choiceImage = this.etape.imageBadChoice;
       this.choiceHintText = this.etape.hintBadChoice;
+      this.choiceStatusLogo = 'qcm_result_ko';
     }
   }
 

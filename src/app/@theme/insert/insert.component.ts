@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener, ViewChild, ElementRef, Input, Output, EventEmitter } from '@angular/core';
+import { HintText } from 'src/app/@commons/models/generics';
 
 @Component({
   selector: 'app-theme-insert',
@@ -7,9 +8,8 @@ import { Component, OnInit, HostListener, ViewChild, ElementRef, Input, Output, 
 })
 export class InsertComponent implements OnInit {
 
-  visited = false;
   insertBtn = 'insert_btn_notif';
-  @Input() insertText: string;
+  @Input() insertText: HintText;
   @Output() opened: EventEmitter<void> = new EventEmitter();
 
   @ViewChild('insertBtnElm') el: ElementRef;
@@ -21,14 +21,14 @@ export class InsertComponent implements OnInit {
 
   @HostListener('enterScene')
   clickInside() {
-    this.visited = true;
+    this.insertText.visited = true;
     this.insertBtn = 'insert_btn_opened';
     this.opened.emit(null);
   }
 
   @HostListener('exitScene')
-  clickOutside(iv) {
-    this.insertBtn = this.visited ? 'insert_btn_notif_visited' : 'insert_btn_notif';
+  clickOutside(div) {
+    this.insertBtn = this.insertText.visited ? 'insert_btn_notif_visited' : 'insert_btn_notif';
   }
 
 }

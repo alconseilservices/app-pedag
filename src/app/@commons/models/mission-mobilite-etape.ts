@@ -1,4 +1,4 @@
-import { Indice, Visitable, Choice } from './generics';
+import { Indice, Visitable, Choice, HintText } from './generics';
 /**
  *
  */
@@ -32,7 +32,7 @@ export interface MissionMobiliteEtape {
   /**
    * le texte de l'encart
    */
-  insertText: string;
+  insertText: HintText;
   /**
    * liste des indices
    */

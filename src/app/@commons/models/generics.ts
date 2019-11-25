@@ -31,6 +31,15 @@ export interface Visitable {
 /**
  *
  */
+export interface HintText extends Visitable {
+  /**
+   *
+   */
+  value: string;
+}
+/**
+ *
+ */
 export interface ImageScaler {
   /**
    *

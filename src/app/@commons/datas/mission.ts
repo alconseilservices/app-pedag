@@ -11,13 +11,15 @@ export const Mission: MissionMobilite = {
   etapes: [
     {
       path: Path.ETAPE_IMAGE_INTERACTIVE,
-      insertText: `
+      insertText: {
+        value: `
         En route pour retrouver les autres groupes,
         vous recevez un message expliquant que le rendez-vous a
         changé.<br><br>Vous devez désormais les retrouver directement
         à l\'arrêt La Plaine Stade de France à 15h15.<br><br> Repérez
         les éléments qui vous permettent de trouver un nouvel itinéraire.
-        `,
+        `
+      },
       backgroundImage: 'S051',
       indices: [
         {
@@ -37,10 +39,12 @@ export const Mission: MissionMobilite = {
     },
     {
       path: Path.ETAPE_QCM_INDEX,
-      insertText: `
+      insertText: {
+        value: `
         Suite au message reçu, vous devez adapter votre itinéraire pour aller directement
          à l'arrêt La Plaine Stade de France pour 15h15.<br><br>Que faîtes-vous ?
-      `,
+        `
+      },
       landingImage: 'S052',
       choices: [
         {
