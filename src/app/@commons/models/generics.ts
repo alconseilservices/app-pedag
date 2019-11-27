@@ -176,7 +176,7 @@ export interface MissionCourseStepCommon {
 /**
  * Représente la spécification d'un message clé.
  */
-export interface MessageCle extends ImageWindow, Visitable {
+export interface MessageCle extends ImageScaler, Visitable {
   /**
    * Texte du message clé
    * @required

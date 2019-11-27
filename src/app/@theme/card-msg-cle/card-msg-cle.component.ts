@@ -18,23 +18,15 @@ export class CardMsgCleComponent implements OnInit {
   ngOnInit() {
   }
 
-  background(): SafeStyle {
-    if (this.activMessage.visited) {
-      return this.sanitizer.bypassSecurityTrustStyle(
-        `${this.activMessage.wx} ${this.activMessage.wy} ` +
-        `no-repeat url('./assets/images/'${this.activMessage.wimg})` +
-        `,rgba(255, 255, 255, 0.6)`
-      );
-    } else {
-      return this.sanitizer.bypassSecurityTrustStyle(
-        `${this.activMessage.wx} ${this.activMessage.wy} ` +
-        `no-repeat url('./assets/images/'${this.activMessage.wimg})`
-      );
-    }
-  }
-
   msgSelected() {
     this.activMessage.visited = true;
   }
 
+  textBackground(): SafeStyle {
+    if (this.activMessage.visited) {
+      return `white`;
+    } else {
+      return undefined;
+    }
+  }
 }

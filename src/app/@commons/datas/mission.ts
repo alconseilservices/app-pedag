@@ -78,54 +78,60 @@ export const Mission: MissionMobilite = {
     {
       message : '^Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor \
                 sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.$',
-      wimg: 'MC1.jpg',
-      wx: '0',
-      wy: '0',
+      file: 'S051',
+      left: 0,
+      top: 0,
+      height: 100,
       visited : false
     },
     {
       // tslint:disable-next-line: max-line-length
       message : '^Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, \
                 consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.$',
-      wimg: 'MC2.jpg',
-      wx: '0',
-      wy: '0',
+      file: 'S051',
+      left: 0,
+      top: 0,
+      height: 100,
       visited : false
     },
     {
       // tslint:disable-next-line: max-line-length
       message : '^Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, \
                 consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.$',
-      wimg: 'MC3.jpg',
-      wx: '0',
-      wy: '0',
+      file: 'S051',
+      left: 0,
+      top: 0,
+      height: 100,
       visited : false
     },
     {
       // tslint:disable-next-line: max-line-length
       message : '^Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, \
                 consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.$',
-      wimg: 'MC4.jpg',
-      wx: '0',
-      wy: '0',
+      file: 'S051',
+      left: 0,
+      top: 0,
+      height: 100,
       visited : false
     },
     {
       // tslint:disable-next-line: max-line-length
       message : '^Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, \
                 consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.$',
-      wimg: 'MC5.jpg',
-      wx: '0',
-      wy: '0',
+      file: 'S052',
+      left: 0,
+      top: 0,
+      height: 100,
       visited : false
     },
     {
       // tslint:disable-next-line: max-line-length
       message : '^Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, \
                 consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.$',
-      wimg: 'MC6.jpg',
-      wx: '0',
-      wy: '0',
+      file: 'S052',
+      left: 0,
+      top: 0,
+      height: 100,
       visited : false
     }
   ],

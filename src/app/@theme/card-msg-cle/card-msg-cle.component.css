@@ -1,21 +1,12 @@
 .theme-card-msg-cle-container {
+  position: relative;
   width: 25.4166666666667vw;
   height: 28vh;
-  border: 8px solid #FFFFFF;
   box-sizing: border-box;
-  box-shadow: 0px 0px 10px rgba(9, 53, 122, 0.2);
+  box-shadow: 0px 0px 10px rgba(32, 32, 32, 0.5);
   border-radius: 8px;
   transition: background-color 1s ease-out;
   overflow: auto;
-}
-
-.theme-card-msg-cle-badge {
-  height: 9.166666666666667vh;
-  line-height: 10vh;
-  text-align: center;
-  width: 9.166666666666667vh;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
 }
 
 .theme-card-msg-cle-text {
