@@ -120,4 +120,18 @@ export class MissionIndexComponent implements OnInit {
     return ((this.etapeIndex + 1) * 100) / this.mission.etapes.length;
   }
 
+  headerIconName(): string {
+    if (
+      String(this.router.url).endsWith(Path.ETAPE_QCM_DECISION) ||
+      String(this.router.url).endsWith(Path.ETAPE_QCM_INDEX) ||
+      String(this.router.url).endsWith(Path.ETAPE_QCM_RESULTAT)
+    ) {
+      return 'icon_decision';
+    } else if (String(this.router.url).endsWith(Path.ETAPE_IMAGE_INTERACTIVE)) {
+      return 'icon_imginter';
+    } else {
+      return undefined;
+    }
+  }
+
 }

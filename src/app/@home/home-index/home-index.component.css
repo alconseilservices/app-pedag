@@ -1,6 +1,9 @@
-.intro-index-entry {
-  background-image: url(./../../../assets/images/play.png);
-  background-size: cover;
+.intro-index-entry  {
+  background: url(./../../../assets/icons/play.png) center / cover no-repeat;
+}
+
+.intro-index-entry:hover  {
+  background: url(./../../../assets/icons/play_hover.png) center / cover no-repeat !important;
 }
 
 .intro-index-entry-label {

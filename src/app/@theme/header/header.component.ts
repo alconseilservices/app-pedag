@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { UserConfirmedAction, ConfirmedAction } from '../confirm-popin/confirm-popin.component';
 import { ConfirmPopinService } from '../confirm-popin/confirm-popin.service';
 import { Router } from '@angular/router';
+import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   @Input() title: string;
+  @Input() iconName: string;
   @Input() showIcon = false;
   @Output() userConfirmedAction: EventEmitter<UserConfirmedAction> = new EventEmitter();
 
@@ -19,7 +21,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private confirmPopinService: ConfirmPopinService,
-    private router: Router
+    private router: Router,
+    private sanitizer: DomSanitizer
   ) {}
 
   ngOnInit() {
@@ -44,6 +47,12 @@ export class HeaderComponent implements OnInit {
   }
 
   maximize(): void {
+  }
+
+  titleIconBackground(): SafeStyle {
+    return this.sanitizer.bypassSecurityTrustStyle(
+      `url(./../../../assets/icons/${this.iconName}.png) center / cover no-repeat`
+    );
   }
 
 }
