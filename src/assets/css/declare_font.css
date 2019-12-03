@@ -1,92 +1,9 @@
 @font-face {
-	font-family: 'AvenirLTStd-Book';
-	src: url('./../fonts/AvenirLTStd-Book.otf');
-}
-
-@font-face {
-	font-family: 'AvenirLTStd-Medium';
-	src: url('./../fonts/AvenirLTStd-Medium.otf');
-}
-
-@font-face {
-	font-family: 'AvenirLTStd-Roman';
-	src: url('./../fonts/AvenirLTStd-Roman.otf');
-}
-
-@font-face {
-	font-family: 'Frutiger LT 55 Roman';
-	src: url('./../fonts/Frutiger LT 55 Roman.ttf');
-}
-
-@font-face {
-	font-family: 'Frutiger LT 65 Bold';
-	src: url('./../fonts/Frutiger LT 65 Bold.ttf');
-}
-
-@font-face {
-	font-family: 'Frutiger LT 75 Black';
-	src: url('./../fonts/Frutiger LT 75 Black.ttf');
+	font-family: 'Avenir';
+	src: url('./../fonts/Avenir.ttc');
 }
 
 * {
   font-size: 10px;
-  font-family: 'AvenirLTStd-Medium';
+  font-family: 'Avenir';
 }
-
-.app-title-verybig {
-  font-family: 'Frutiger LT 75 Black';
-  font-size: 5vh;
-  color: #09357A;
-}
-
-.app-title-big {
-  font-family: 'Frutiger LT 75 Black';
-  font-size: 3vh;
-  color: #09357A;
-}
-
-.app-title-medium {
-  font-family: 'Frutiger LT 75 Black';
-  font-size: 2.5vh;
-  color: #09357A;
-}
-
-.app-title-small {
-  font-family: 'Frutiger LT 75 Black';
-  font-size: 2vh;
-  color: #09357A;
-}
-
-.app-title-verysmall {
-  font-family: 'Frutiger LT 75 Black';
-  font-size: 1.4vh;
-  color: #09357A;
-}
-
-.app-btn-label {
-  font-family: 'Frutiger LT 65 Bold';
-  font-size: 2vh;
-  color: #09357A;
-}
-
-.app-text {
-  line-height: 3.6vh;
-  font-family: 'Frutiger LT 55 Roman';
-  font-size: 2.6vh;
-  color: #09357A;
-}
-
-.app-text-medium {
-  font-family: 'Frutiger LT 55 Roman';
-  font-size: 2.1vh;
-  line-height: 3.1vh;
-  color: #09357A;
-}
-
-.app-text-small {
-  line-height: 3.1vh;
-  font-family: 'Frutiger LT 55 Roman';
-  font-size: 1vw;
-  color: #09357A;
-}
-

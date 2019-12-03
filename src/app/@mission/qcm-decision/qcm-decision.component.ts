@@ -48,6 +48,9 @@ export class QcmDecisionComponent implements OnInit {
   selectChoice(choice: Choice): void {
     this.etape.choices.forEach(c => c.activ = false);
     choice.activ = true;
+    setTimeout(() => {
+      this.router.navigate(['etapes', this.etapeIndex, 'qcm-resultat']);
+    }, 500);
   }
 
 }

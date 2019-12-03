@@ -8,6 +8,7 @@ export class SceneElementDirective implements OnInit {
   element: any;
 
   @Input() sceneElTop: string;
+  @Input() sceneElBottom: string;
 
   @Input() preservePosition: boolean;
   @Input() sceneElLeft: string;
@@ -44,6 +45,7 @@ export class SceneElementDirective implements OnInit {
       this.element.style.position = 'absolute';
     }
     this.element.style.top = this.sceneElTop;
+    this.element.style.bottom = this.sceneElBottom;
 
     if (this.sceneElInsertX) {
       this.element.style.left = '100vw';

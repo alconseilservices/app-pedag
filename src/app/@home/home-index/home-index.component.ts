@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalUtilService } from 'src/app/@theme/modal-util/modal-util.service';
 
 @Component({
   selector: 'app-home-index',
@@ -8,13 +9,17 @@ import { Router } from '@angular/router';
 })
 export class HomeIndexComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private modalUtil: ModalUtilService) { }
 
   ngOnInit() {
   }
 
   goToIntro() {
     this.router.navigate(['intro']);
+  }
+
+  showCredits(): void {
+    this.modalUtil.popin();
   }
 
 }

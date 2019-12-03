@@ -24,7 +24,7 @@ export class CardMsgCleComponent implements OnInit {
 
   textBackground(): SafeStyle {
     if (this.activMessage.visited) {
-      return `white`;
+      return `rgba(255, 255, 255, 0.85)`;
     } else {
       return undefined;
     }

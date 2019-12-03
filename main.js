@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, ipcMain} = require('electron')
 let aspect = require("electron-aspectratio")
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -10,6 +10,7 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
+    show: false,
     width: 1440,
     height: 1024,
     fullscreen: false,
@@ -18,6 +19,11 @@ function createWindow () {
       nodeIntegration: true
     }
   })
+
+  ipcMain.on('switchFullScreen', (event) => {
+    mainWindow.setFullScreen(!mainWindow.isFullScreen());
+    mainWindow.setSimpleFullScreen(!mainWindow.isSimpleFullScreen());
+  });
 
   // mainWindowHandler = new aspect(mainWindow);
   // mainWindowHandler.setRatio(8, 5, 10);

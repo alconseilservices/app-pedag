@@ -1,10 +1,10 @@
 <div class="theme-card-msg-cle-container" (click)="msgSelected()">
-  <img src="./../../../assets/images/{{activMessage.file}}.png"
+  <img src="./assets/images/{{activMessage.file}}.png"
        [style.top.%]="activMessage.top" [style.left.%]="activMessage.left"
        [style.position]="'absolute'" [style.height.%]="activMessage.height">
   <div style="position: relative; top: 0; right: 0; height: 100%; width: 100%; padding: 5px;"
       fxLayout="row" fxLayoutAlign="center center"
       [style.background]="textBackground()">
-      <div class="theme-card-msg-cle-text app-text" *ngIf="activMessage.visited">{{activMessage.message}}</div>
+      <div class="theme-card-msg-cle-text" *ngIf="activMessage.visited">{{activMessage.message}}</div>
   </div>
 </div>

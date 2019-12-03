@@ -19,7 +19,7 @@ export interface UserConfirmedAction {
   selector: 'app-theme-confirm-popin',
   template:
     `<div class="confirm-popin-container">
-      <div class="confirm-popin-face"></div>
+      <div class="confirm-popin-close" (click)="doConfirm(false)"></div>
       <div class="confirm-popin-text app-text-medium">{{userConfirmedAction.message}}</div>
       <div class="confirm-popin-yes app-btn-label" (click)="doConfirm(true)">Oui</div>
       <div class="confirm-popin-no app-btn-label" (click)="doConfirm(false)">Non</div>
@@ -28,25 +28,24 @@ export interface UserConfirmedAction {
   styles: [
     `.confirm-popin-container {
       position: absolute;
-      width: 38.802083333333333vw;
-      height: 27.083333333333333vh;
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0px 4px 10px #09357A;
+      width: 50vw;
+      height: 28vh;
+      background: rgba(60,55,50,.9);
+      box-shadow: 0px 0px 30px rgba(32, 32, 32, 0.5);
       border-radius: 15px;
-      top: 11.666666666666667vh;
-      left: 30.520833333333333vw;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }`,
-    `.confirm-popin-face {
+    `.confirm-popin-close {
       position: absolute;
       top: 10px;
-      left: 10px;
+      right: 10px;
       width: 5vh;
       height: 5vh;
-      background-color: #88E7C9;
-      background-image: url(./assets/images/face.png);
+      background-image: url(./assets/icons/close.png);
       background-repeat: no-repeat;
       background-size: 100%;
-      box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7);
       border-radius: 50%;
     }`,
     `.confirm-popin-text {
@@ -56,7 +55,8 @@ export interface UserConfirmedAction {
       top: 25.54%;
       bottom: 49.85%;
       text-align: center;
-      color: #09357A;
+      color: white;
+      font-size: 2.5vh;
     }`,
     `.confirm-popin-yes {
       position: absolute;
@@ -64,11 +64,12 @@ export interface UserConfirmedAction {
       right: 51.14%;
       top: 66.15%;
       bottom: 20.31%;
-      line-height: 3.5vh;
+      line-height: 3.9vh;
       text-align: center;
-      color: #FFFFFF;
-      background: #09357A;
+      color: #3C3732;
+      background: white;
       border-radius: 100px;
+      font-size: 2.5vh;
     }`,
     `.confirm-popin-no {
       position: absolute;
@@ -76,11 +77,12 @@ export interface UserConfirmedAction {
       right: 17.45%;
       top: 66.15%;
       bottom: 20.31%;
-      line-height: 3.5vh;
+      line-height: 3.9vh;
       text-align: center;
-      color: #FFFFFF;
-      background: #09357A;
+      color: #3C3732;
+      background: white;
       border-radius: 100px;
+      font-size: 2.5vh;
     }`
   ]
 })

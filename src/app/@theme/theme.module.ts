@@ -15,6 +15,7 @@ import { WallpaperDirective } from './directives/wallpaper.directive';
 import { ProgressComponent } from './progress/progress.component';
 import { DimSyncDirective } from './directives/dim-sync.directive';
 import { InsertComponent } from './insert/insert.component';
+import { ModalUtilComponent } from './modal-util/modal-util.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { InsertComponent } from './insert/insert.component';
     HeaderComponent,
     PrevnextComponent,
     ConfirmPopinComponent,
+    ModalUtilComponent,
     WideImgBgComponent,
     SceneDirective,
     SceneElementDirective,
@@ -42,6 +44,7 @@ import { InsertComponent } from './insert/insert.component';
     HeaderComponent,
     PrevnextComponent,
     ConfirmPopinComponent,
+    ModalUtilComponent,
     WideImgBgComponent,
     SceneElementDirective,
     SceneDirective,

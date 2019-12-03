@@ -3,6 +3,7 @@ import { UserConfirmedAction, ConfirmedAction } from '../confirm-popin/confirm-p
 import { ConfirmPopinService } from '../confirm-popin/confirm-popin.service';
 import { Router } from '@angular/router';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
+import { ipcRenderer } from 'electron';
 
 
 @Component({
@@ -47,11 +48,12 @@ export class HeaderComponent implements OnInit {
   }
 
   maximize(): void {
+    ipcRenderer.send('switchFullScreen');
   }
 
   titleIconBackground(): SafeStyle {
     return this.sanitizer.bypassSecurityTrustStyle(
-      `url(./../../../assets/icons/${this.iconName}.png) center / cover no-repeat`
+      `url(./assets/icons/${this.iconName}.png) center / cover no-repeat`
     );
   }
 

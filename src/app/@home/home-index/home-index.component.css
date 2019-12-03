@@ -17,3 +17,7 @@
   white-space: nowrap;
 }
 
+.intro-index-credit-icon {
+  background: url(./../../../assets/icons/credits.png) center / cover no-repeat;
+}
+
