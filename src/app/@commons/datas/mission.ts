@@ -2,6 +2,7 @@ import { MobilityMission } from '../models/mobility-mission';
 import { Path } from '../models/mobility-mission-step';
 
 export const Mission: MobilityMission = {
+  devMode: true,
   playerScore: 0,
   videoIntro: '3_Fonctionnement_d_une_centrale_photovoltaique_1.mp4',
   description: `
@@ -24,7 +25,9 @@ export const Mission: MobilityMission = {
       backgroundImage: 'S051',
       indications: [
         {
-          hidden: true,
+          hidden: false,
+          width: 200,
+          height: 150,
           x: 705,
           y: 41,
           text: 'Le signal d\'alarme doit-être utilisé seulement en cas d\'urgence. \

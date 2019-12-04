@@ -13,6 +13,20 @@
   height: 5.2734375vh;
   width: 5.2734375vh;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.etapes-image-interactive-indication-zone {
+  position: absolute;
+  height: 8vh;
+  width: 8vh;
+}
+
+.etapes-image-interactive-indication-zone-dev {
+  border: dashed;
+  background: rgba(65, 87, 99, 0.39);
 }
 
 .etapes-image-interactive-modal {

@@ -1,13 +1,15 @@
 <div class="etapes-image-interactive-container">
   <img class="etapes-image-interactive-container-bg"
        src="./assets/images/{{etape.backgroundImage}}.png">
-  <img class="etapes-image-interactive-indice"
-       src="./assets/icons/interrest_point_anchor.png"
-       *ngFor="let indice of etape.indications"
-       [ngClass]="{'etapes-image-interactive-indice-visited': indice.visited}"
-       [style.opacity]="computeIndicationVisibility(indice)"
+  <div class="etapes-image-interactive-indication-zone"
+       [ngClass]="{'etapes-image-interactive-indication-zone-dev': mission.devMode}"
+       *ngFor="let indice of etape.indications" (click)="showIndice(indice)"
        [style.left]="computeX(indice)" [style.top]="computeY(indice)"
-       (click)="showIndice(indice)">
+       [style.height]="computeHeight(indice)" [style.width]="computeWidth(indice)">
+       <img class="etapes-image-interactive-indice"
+        src="./assets/icons/interrest_point_anchor.png"
+        [style.opacity]="computeIndicationVisibility(indice)">
+  </div>
 </div>
 <div  appSceneElement *ngIf="activeIndice"
       sceneElWidthRatio="1.79147207241075"

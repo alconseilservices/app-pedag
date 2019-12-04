@@ -58,6 +58,14 @@ export class ImageInteractiveComponent implements OnInit {
     }
   }
 
+  computeWidth(indice: Indication): SafeStyle {
+    return this.sanitizer.bypassSecurityTrustStyle(((indice.width * 100) / 1229) + '%');
+  }
+
+  computeHeight(indice: Indication): SafeStyle {
+    return this.sanitizer.bypassSecurityTrustStyle(((indice.height * 100) / 1229) + '%');
+  }
+
   computeX(indice: Indication): SafeStyle {
     return this.sanitizer.bypassSecurityTrustStyle(((indice.x * 100) / 1229) + '%');
   }

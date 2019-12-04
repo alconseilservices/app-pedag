@@ -1,4 +1,13 @@
 /**
+ *
+ */
+export interface DevMode {
+  /**
+   *
+   */
+  devMode?: boolean;
+}
+/**
  * Permet d'assigner un ordre pour un objet dans une collection d'objets ordonnés.
  */
 export interface Ordered {
@@ -127,6 +136,14 @@ export interface Indication extends Visitable {
    * @required
    */
   y: number;
+  /**
+   *
+   */
+  width: number;
+  /**
+   *
+   */
+  height: number;
   /**
    * Titre de l'indice
    * @required

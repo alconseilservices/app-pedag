@@ -1,10 +1,10 @@
 import { MobilityMissionStep } from './mobility-mission-step';
-import { KeyMessage, ScoredVideo } from './generics';
+import { KeyMessage, ScoredVideo, DevMode } from './generics';
 
 /**
  * Représente une spécification pour une mission mibilite
  */
-export interface MobilityMission {
+export interface MobilityMission extends DevMode {
   /**
    *
    */
