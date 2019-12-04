@@ -3,6 +3,11 @@
 	src: url('./../fonts/Avenir.ttc');
 }
 
+@font-face {
+	font-family: 'Avenir-Heavy';
+	src: url('./../fonts/Avenir-Heavy.ttf');
+}
+
 * {
   font-size: 10px;
   font-family: 'Avenir';

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MissionsService } from 'src/app/@commons/services/missions.service';
-import { MissionMobilite } from 'src/app/@commons/models/mission-mobilite';
+import { MobilityMission } from 'src/app/@commons/models/mobility-mission';
 
 @Component({
   selector: 'app-fin-index',
@@ -9,25 +9,25 @@ import { MissionMobilite } from 'src/app/@commons/models/mission-mobilite';
 })
 export class FinIndexComponent implements OnInit {
 
-  mission: MissionMobilite;
+  mission: MobilityMission;
 
   constructor(private service: MissionsService) {
     this.service.missionMobilite()
-      .subscribe((mission: MissionMobilite) => this.mission = mission);
+      .subscribe((mission: MobilityMission) => this.mission = mission);
   }
 
   ngOnInit() {
   }
 
   computePrevious(): string {
-    return 'etapes/' +  (this.mission.etapes.length - 1)
-            +  '/' + this.mission.etapes[this.mission.etapes.length - 1].path;
+    return 'etapes/' +  (this.mission.steps.length - 1)
+            +  '/' + this.mission.steps[this.mission.steps.length - 1].path;
   }
 
   computeEndVideo(): string {
     return this.mission.endVideos
-      .find(v => v.minScore <= this.mission.obtainedScore
-          && v.maxScore >= this.mission.obtainedScore).file;
+      .find(v => v.minScore <= this.mission.playerScore
+          && v.maxScore >= this.mission.playerScore).file;
   }
 
 }

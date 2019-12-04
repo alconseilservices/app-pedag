@@ -112,7 +112,11 @@ export interface ImageWindow {
 /**
  * Représente la spécification d'un indice.
  */
-export interface Indice extends Visitable {
+export interface Indication extends Visitable {
+  /**
+   * invisible
+   */
+  hidden: boolean;
   /**
    * Abscisse du l'icone loupe calculé par rapport au gabarit de la maquette figma.
    * @required
@@ -154,29 +158,9 @@ export interface Indice extends Visitable {
 }
 
 /**
- * Représente la spécification des informations communes d'une étape de mission.
- */
-export interface MissionCourseStepCommon {
-  /**
-   * Chemin d'activation du `Router` Angular.
-   * @required
-   */
-  path: string;
-  /**
-   * Titre de l'étape de mission.
-   * @required
-   */
-  title: string;
-  /**
-   * Texte de suggestion affiché dans l'entête de l'application.
-   */
-  hint?: string;
-}
-
-/**
  * Représente la spécification d'un message clé.
  */
-export interface MessageCle extends ImageScaler, Visitable {
+export interface KeyMessage extends ImageScaler, Visitable {
   /**
    * Texte du message clé
    * @required

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { MissionMobilite } from '../models/mission-mobilite';
-import { MissionMobiliteEtape } from '../models/mission-mobilite-etape';
+import { MobilityMission } from '../models/mobility-mission';
+import { MobilityMissionStep } from '../models/mobility-mission-step';
 import { Mission } from '../datas/mission';
 
 @Injectable({
@@ -9,21 +9,21 @@ import { Mission } from '../datas/mission';
 })
 export class MissionsService {
 
-  public missionSource: BehaviorSubject<MissionMobilite>;
-  public missionSource$: Observable<MissionMobilite>;
-  public etapeActiveSource: BehaviorSubject<MissionMobiliteEtape>;
-  public etapeActiveSource$: Observable<MissionMobiliteEtape>;
+  public missionSource: BehaviorSubject<MobilityMission>;
+  public missionSource$: Observable<MobilityMission>;
+  public etapeActiveSource: BehaviorSubject<MobilityMissionStep>;
+  public etapeActiveSource$: Observable<MobilityMissionStep>;
 
   constructor() {
-    this.missionSource = new BehaviorSubject<MissionMobilite>(Mission);
+    this.missionSource = new BehaviorSubject<MobilityMission>(Mission);
     this.missionSource$ = this.missionSource.asObservable();
 
-    this.etapeActiveSource = new BehaviorSubject<MissionMobiliteEtape>(Mission.etapes[0]);
+    this.etapeActiveSource = new BehaviorSubject<MobilityMissionStep>(Mission.steps[0]);
     this.etapeActiveSource$ = this.etapeActiveSource.asObservable();
 
   }
 
-  missionMobilite(): Observable<MissionMobilite> {
+  missionMobilite(): Observable<MobilityMission> {
     return this.missionSource$;
   }
 }

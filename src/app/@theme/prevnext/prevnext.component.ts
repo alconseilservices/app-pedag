@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MissionsService } from 'src/app/@commons/services/missions.service';
-import { MissionMobilite } from 'src/app/@commons/models/mission-mobilite';
+import { MobilityMission } from 'src/app/@commons/models/mobility-mission';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,7 +16,7 @@ export class PrevnextComponent implements OnInit {
   @Input() nextRoute: string;
   @Input() previousRoute: string;
   @Output() customBtnClicked: EventEmitter<void> = new EventEmitter();
-  mission: MissionMobilite;
+  mission: MobilityMission;
 
   constructor(private service: MissionsService, private router: Router) { }
 

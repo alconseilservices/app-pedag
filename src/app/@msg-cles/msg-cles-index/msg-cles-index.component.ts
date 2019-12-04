@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MissionsService } from 'src/app/@commons/services/missions.service';
-import { MissionMobilite } from 'src/app/@commons/models/mission-mobilite';
+import { MobilityMission } from 'src/app/@commons/models/mobility-mission';
 
 @Component({
   selector: 'app-msg-cles-index',
@@ -9,11 +9,11 @@ import { MissionMobilite } from 'src/app/@commons/models/mission-mobilite';
 })
 export class MsgClesIndexComponent implements OnInit {
 
-  mission: MissionMobilite;
+  mission: MobilityMission;
 
   constructor(private service: MissionsService) {
     this.service.missionMobilite()
-      .subscribe((mission: MissionMobilite) => this.mission = mission);
+      .subscribe((mission: MobilityMission) => this.mission = mission);
   }
 
   ngOnInit() {

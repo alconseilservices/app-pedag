@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MissionMobilite } from 'src/app/@commons/models/mission-mobilite';
-import { MissionMobiliteQcm } from 'src/app/@commons/models/mission-mobilite-etape';
+import { MobilityMission } from 'src/app/@commons/models/mobility-mission';
+import { MobilityMissionQcm } from 'src/app/@commons/models/mobility-mission-step';
 import { MissionsService } from 'src/app/@commons/services/missions.service';
 import { ActivatedRoute, Router, Event, NavigationEnd } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -12,8 +12,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class QcmIndexComponent implements OnInit {
 
-  @Input() mission: MissionMobilite;
-  @Input() etape: MissionMobiliteQcm;
+  @Input() mission: MobilityMission;
+  @Input() etape: MobilityMissionQcm;
   etapeIndex: number;
 
   constructor(
@@ -23,10 +23,10 @@ export class QcmIndexComponent implements OnInit {
     private sanitizer: DomSanitizer
     ) {
     this.service.missionMobilite()
-      .subscribe((mission: MissionMobilite) => {
+      .subscribe((mission: MobilityMission) => {
         this.mission = mission;
         const etapeIndex = parseInt(this.route.parent.snapshot.params.id, 10);
-        this.etape = this.mission.etapes[etapeIndex] as MissionMobiliteQcm;
+        this.etape = this.mission.steps[etapeIndex] as MobilityMissionQcm;
       });
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
@@ -37,7 +37,7 @@ export class QcmIndexComponent implements OnInit {
 
   computeStepInfo(): void {
     this.etapeIndex = parseInt(this.route.parent.snapshot.params.id, 10);
-    this.etape = this.mission.etapes[this.etapeIndex] as MissionMobiliteQcm;
+    this.etape = this.mission.steps[this.etapeIndex] as MobilityMissionQcm;
   }
 
   ngOnInit() {

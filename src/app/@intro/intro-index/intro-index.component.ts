@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MissionMobilite } from 'src/app/@commons/models/mission-mobilite';
+import { MobilityMission } from 'src/app/@commons/models/mobility-mission';
 import { MissionsService } from 'src/app/@commons/services/missions.service';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -10,14 +10,14 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class IntroIndexComponent implements OnInit {
 
-  mission: MissionMobilite;
+  mission: MobilityMission;
   isMandatory = true;
 
   constructor(private missionService: MissionsService, private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     this.missionService.missionMobilite()
-      .subscribe((mission: MissionMobilite) => this.mission = mission);
+      .subscribe((mission: MobilityMission) => this.mission = mission);
   }
 
   getVideoRelativeUrl() {

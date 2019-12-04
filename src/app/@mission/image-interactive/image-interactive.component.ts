@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MissionMobilite } from 'src/app/@commons/models/mission-mobilite';
-import { MissionMobiliteImgInteractive } from 'src/app/@commons/models/mission-mobilite-etape';
+import { MobilityMission } from 'src/app/@commons/models/mobility-mission';
+import { MobilityMissionInteractiveImage } from 'src/app/@commons/models/mobility-mission-step';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router, NavigationEnd, Event } from '@angular/router';
 import { MissionsService } from 'src/app/@commons/services/missions.service';
-import { Indice } from 'src/app/@commons/models/generics';
+import { Indication } from 'src/app/@commons/models/generics';
 
 @Component({
   selector: 'app-mission-image-interactive',
@@ -13,9 +13,9 @@ import { Indice } from 'src/app/@commons/models/generics';
 })
 export class ImageInteractiveComponent implements OnInit {
 
-  @Input() mission: MissionMobilite;
-  @Input() etape: MissionMobiliteImgInteractive;
-  activeIndice: Indice;
+  @Input() mission: MobilityMission;
+  @Input() etape: MobilityMissionInteractiveImage;
+  activeIndice: Indication;
   etapeIndex: number;
 
   constructor(
@@ -25,7 +25,7 @@ export class ImageInteractiveComponent implements OnInit {
     private sanitizer: DomSanitizer
     ) {
     this.service.missionMobilite()
-      .subscribe((mission: MissionMobilite) => {
+      .subscribe((mission: MobilityMission) => {
         this.mission = mission;
         this.computeStepInfo();
       });
@@ -38,7 +38,7 @@ export class ImageInteractiveComponent implements OnInit {
 
   computeStepInfo(): void {
     this.etapeIndex = parseInt(this.route.parent.snapshot.params.id, 10);
-    this.etape = this.mission.etapes[this.etapeIndex] as MissionMobiliteImgInteractive;
+    this.etape = this.mission.steps[this.etapeIndex] as MobilityMissionInteractiveImage;
   }
 
   ngOnInit() {
@@ -50,15 +50,15 @@ export class ImageInteractiveComponent implements OnInit {
     );
   }
 
-  computeX(indice: Indice): SafeStyle {
+  computeX(indice: Indication): SafeStyle {
     return this.sanitizer.bypassSecurityTrustStyle(((indice.x * 100) / 1229) + '%');
   }
 
-  computeY(indice: Indice): SafeStyle {
+  computeY(indice: Indication): SafeStyle {
     return this.sanitizer.bypassSecurityTrustStyle(((indice.y * 100) / 681) + '%');
   }
 
-  showIndice(indice: Indice) {
+  showIndice(indice: Indication) {
     indice.visited = true;
     this.activeIndice = indice;
   }

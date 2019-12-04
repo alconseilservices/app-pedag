@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { AssetService } from 'src/app/@commons/util/asset.service';
-import { MessageCle } from 'src/app/@commons/models/generics';
+import { KeyMessage } from 'src/app/@commons/models/generics';
 
 @Component({
   selector: 'app-theme-card-msg-cle',
@@ -11,7 +11,7 @@ import { MessageCle } from 'src/app/@commons/models/generics';
 export class CardMsgCleComponent implements OnInit {
 
   @Input() index: number;
-  @Input() activMessage: MessageCle;
+  @Input() activMessage: KeyMessage;
 
   constructor(private sanitizer: DomSanitizer, public asset: AssetService) { }
 

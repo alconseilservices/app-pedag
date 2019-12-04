@@ -1,6 +1,5 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow, ipcMain} = require('electron')
-let aspect = require("electron-aspectratio")
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -10,7 +9,6 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    show: false,
     width: 1440,
     height: 1024,
     fullscreen: false,
@@ -21,26 +19,11 @@ function createWindow () {
   })
 
   ipcMain.on('switchFullScreen', (event) => {
+    console.log('isFullScreen', mainWindow.isFullScreen());
+    console.log('isSimpleFullScreen', mainWindow.isSimpleFullScreen());
     mainWindow.setFullScreen(!mainWindow.isFullScreen());
     mainWindow.setSimpleFullScreen(!mainWindow.isSimpleFullScreen());
   });
-
-  // mainWindowHandler = new aspect(mainWindow);
-  // mainWindowHandler.setRatio(8, 5, 10);
-
-  // DOT NOT DELETE
-  // this is target code for aspect ration handling.
-  // A PR is being proposed to handle aspect ratio on windows platform
-  // will move to this implem right after PR merged and released
-  // https://github.com/electron/electron/pull/18306
-  //   const defaultRatio = 8 / 5;
-  //   mainWindow.setAspectRatio(defaultRatio);
-  //   mainWindow.on("resize", () => {
-  //     const ratio = mainWindow.isFullScreen() ? 0 : defaultRatio;
-  //     mainWindow.setAspectRatio(ratio);
-  //   });
-  // DOT NOT DELETE
-
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools({

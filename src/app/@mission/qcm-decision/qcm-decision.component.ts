@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MissionMobilite } from 'src/app/@commons/models/mission-mobilite';
-import { MissionMobiliteQcm } from 'src/app/@commons/models/mission-mobilite-etape';
+import { MobilityMission } from 'src/app/@commons/models/mobility-mission';
+import { MobilityMissionQcm } from 'src/app/@commons/models/mobility-mission-step';
 import { MissionsService } from 'src/app/@commons/services/missions.service';
 import { ActivatedRoute, NavigationEnd, Router, Event } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -13,8 +13,8 @@ import { Choice } from 'src/app/@commons/models/generics';
 })
 export class QcmDecisionComponent implements OnInit {
 
-  @Input() mission: MissionMobilite;
-  @Input() etape: MissionMobiliteQcm;
+  @Input() mission: MobilityMission;
+  @Input() etape: MobilityMissionQcm;
   etapeIndex: number;
 
   constructor(
@@ -24,7 +24,7 @@ export class QcmDecisionComponent implements OnInit {
     private sanitizer: DomSanitizer
     ) {
     this.service.missionMobilite()
-      .subscribe((mission: MissionMobilite) => {
+      .subscribe((mission: MobilityMission) => {
         this.mission = mission;
         this.computeStepInfo();
       });
@@ -37,7 +37,7 @@ export class QcmDecisionComponent implements OnInit {
 
   computeStepInfo(): void {
     this.etapeIndex = parseInt(this.route.parent.snapshot.params.id, 10);
-    this.etape = this.mission.etapes[this.etapeIndex] as MissionMobiliteQcm;
+    this.etape = this.mission.steps[this.etapeIndex] as MobilityMissionQcm;
   }
 
   ngOnInit() {

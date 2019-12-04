@@ -42,7 +42,7 @@
 }
 
 .etapes-qcm-resultat-face-name {
-  font-style: normal;
+  font-family: Avenir-Heavy;
   font-weight: 900;
   font-size: 1.953125vh;
   line-height: 1.5625vh;
@@ -52,7 +52,7 @@
 }
 
 .etapes-qcm-resultat-hint-text {
-  font-family: Avenir;
+  font-family: Avenir-Heavy;
   font-style: normal;
   font-weight: 900;
   font-size: 2.734375vh;

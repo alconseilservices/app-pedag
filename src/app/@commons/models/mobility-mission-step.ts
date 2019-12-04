@@ -1,4 +1,4 @@
-import { Indice, Visitable, Choice, HintText } from './generics';
+import { Indication, Visitable, Choice, HintText } from './generics';
 /**
  *
  */
@@ -24,7 +24,7 @@ export enum Path {
 /**
  * Spécification d'une étape de mission mobilite
  */
-export interface MissionMobiliteEtape {
+export interface MobilityMissionStep {
   /**
    * header title
    */
@@ -36,7 +36,7 @@ export interface MissionMobiliteEtape {
   /**
    * liste des indices
    */
-  indices?: Indice[];
+  indications?: Indication[];
   /**
    * any
    */
@@ -46,7 +46,7 @@ export interface MissionMobiliteEtape {
 /**
  * Spécification d'une étape d'image d'interactive
  */
-export interface MissionMobiliteImgInteractive extends MissionMobiliteEtape, Visitable {
+export interface MobilityMissionInteractiveImage extends MobilityMissionStep, Visitable {
   /**
    * nom de l'image de fond assets/images/${backgroundImage}.png
    */
@@ -56,7 +56,7 @@ export interface MissionMobiliteImgInteractive extends MissionMobiliteEtape, Vis
 /**
  * Spécification d'une étape QCM
  */
-export interface MissionMobiliteQcm extends MissionMobiliteEtape, Visitable {
+export interface MobilityMissionQcm extends MobilityMissionStep, Visitable {
   /**
    *
    */

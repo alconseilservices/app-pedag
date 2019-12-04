@@ -1,15 +1,15 @@
-import { MissionMobilite } from '../models/mission-mobilite';
-import { Path } from '../models/mission-mobilite-etape';
+import { MobilityMission } from '../models/mobility-mission';
+import { Path } from '../models/mobility-mission-step';
 
-export const Mission: MissionMobilite = {
-  obtainedScore: 0,
+export const Mission: MobilityMission = {
+  playerScore: 0,
   videoIntro: '3_Fonctionnement_d_une_centrale_photovoltaique_1.mp4',
   description: `
       Aider Yanis et Inès dans leur itinéraire.<br><br>Pour cela,
       vous devrez faire des choix. Attention à ne pas perdre trop de
       temps afin d\'arriver à temps pour la fête.<br><br>Bonne chance !
       `,
-  etapes: [
+  steps: [
     {
       path: Path.ETAPE_IMAGE_INTERACTIVE,
       insertText: {
@@ -74,7 +74,7 @@ export const Mission: MissionMobilite = {
       hintBadChoice: 'Regardons le plan à nouveau. Il y a peut-être un itinéraire avec moins de changements.'
     }
   ],
-  messagesCles: [
+  keyMessages: [
     {
       message : '^Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor \
                 sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.$',
