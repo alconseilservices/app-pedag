@@ -22,8 +22,9 @@ export const Mission: MobilityMission = {
         `
       },
       backgroundImage: 'S051',
-      indices: [
+      indications: [
         {
+          hidden: true,
           x: 705,
           y: 41,
           text: 'Le signal d\'alarme doit-être utilisé seulement en cas d\'urgence. \

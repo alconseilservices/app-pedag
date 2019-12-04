@@ -50,6 +50,14 @@ export class ImageInteractiveComponent implements OnInit {
     );
   }
 
+  computeIndicationVisibility(indice: Indication): SafeStyle {
+    if (indice.visited || !indice.hidden) {
+      return '1';
+    } else {
+      return '0';
+    }
+  }
+
   computeX(indice: Indication): SafeStyle {
     return this.sanitizer.bypassSecurityTrustStyle(((indice.x * 100) / 1229) + '%');
   }

@@ -13,11 +13,6 @@
   height: 5.2734375vh;
   width: 5.2734375vh;
   position: absolute;
-  /* opacity: 0; */
-}
-
-.etapes-image-interactive-indice-visited {
-  opacity: 1 !important;
 }
 
 .etapes-image-interactive-modal {

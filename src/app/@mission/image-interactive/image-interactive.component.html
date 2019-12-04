@@ -3,8 +3,9 @@
        src="./assets/images/{{etape.backgroundImage}}.png">
   <img class="etapes-image-interactive-indice"
        src="./assets/icons/interrest_point_anchor.png"
-       *ngFor="let indice of etape.indices"
+       *ngFor="let indice of etape.indications"
        [ngClass]="{'etapes-image-interactive-indice-visited': indice.visited}"
+       [style.opacity]="computeIndicationVisibility(indice)"
        [style.left]="computeX(indice)" [style.top]="computeY(indice)"
        (click)="showIndice(indice)">
 </div>
