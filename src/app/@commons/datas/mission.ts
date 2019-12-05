@@ -92,15 +92,7 @@ export const Mission: MobilityMission = {
           responseFaceName: 'Yanis',
           responseHint: 'Ça y est on arrive ! Préparez-vous à descendre.'
         }
-      ],
-      imageGoodChoice: 'test_decorB2',
-      faceGoodChoice: 'face_man',
-      faceNameGoodChoice: 'Yanis',
-      hintGoodChoice: 'Ça y est on arrive ! Préparez-vous à descendre.',
-      imageBadChoice: 'test_decorB',
-      faceBadChoice: 'face',
-      faceNameBadChoice: 'Inès',
-      hintBadChoice: 'Regardons le plan à nouveau. Il y a peut-être un itinéraire avec moins de changements.'
+      ]
     }
   ],
   keyMessages: [

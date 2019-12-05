@@ -68,7 +68,12 @@ export class MissionIndexComponent implements OnInit {
    */
   computePrevious(): string {
     if (String(this.router.url).endsWith(Path.ETAPE_QCM_DECISION)) {
-      return 'etapes/' + this.etapeIndex +  '/' + Path.ETAPE_QCM_RESULTAT;
+      const choice = (this.mission.steps[this.etapeIndex] as MobilityMissionQcm).choices.find(c => c.activ);
+      if (choice) {
+        return 'etapes/' + this.etapeIndex +  '/' + Path.ETAPE_QCM_RESULTAT;
+      } else {
+        return 'etapes/' + this.etapeIndex +  '/' + Path.ETAPE_QCM_INDEX;
+      }
     } else if (!isNaN(this.etapeIndex) && this.etapeIndex > 0) {
       return 'etapes/' + (this.etapeIndex - 1) +  '/' + this.mission.steps[this.etapeIndex - 1].path;
     } else {
@@ -131,6 +136,14 @@ export class MissionIndexComponent implements OnInit {
       return 'icon_imginter';
     } else {
       return undefined;
+    }
+  }
+
+  showInsert(): boolean {
+    if (String(this.router.url).endsWith(Path.ETAPE_QCM_RESULTAT)) {
+      return false;
+    } else {
+      return true;
     }
   }
 

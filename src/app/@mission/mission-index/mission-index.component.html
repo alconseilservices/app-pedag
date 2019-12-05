@@ -27,6 +27,7 @@
                       sceneElLeft="37.2916666666667vw"
                       sceneElInsertX="true"
                       [insertText]="etape.insertText"
+                      *ngIf="showInsert()"
                       (opened)="insertOpened=true;"></app-theme-insert>
     <app-theme-prevnext
         appSceneElement

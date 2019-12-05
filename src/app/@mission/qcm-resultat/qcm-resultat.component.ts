@@ -18,10 +18,6 @@ export class QcmResultatComponent implements OnInit {
   etapeIndex: number;
   activeChoice: Choice;
 
-  choiceFaceImage: string;
-  choiceFaceName: string;
-  choiceImage: string;
-  choiceHintText: string;
   choiceStatusLogo: string;
 
   constructor(
@@ -49,16 +45,8 @@ export class QcmResultatComponent implements OnInit {
       this.activeChoice = this.etape.choices.find(c => c.activ);
       if (this.activeChoice) {
         if (this.activeChoice.goodChoice) {
-          this.choiceFaceImage = this.etape.faceGoodChoice;
-          this.choiceFaceName = this.etape.faceNameGoodChoice;
-          this.choiceImage = this.etape.imageGoodChoice;
-          this.choiceHintText = this.etape.hintGoodChoice;
           this.choiceStatusLogo = 'qcm_result_ok';
         } else {
-          this.choiceFaceImage = this.etape.faceBadChoice;
-          this.choiceFaceName = this.etape.faceNameBadChoice;
-          this.choiceImage = this.etape.imageBadChoice;
-          this.choiceHintText = this.etape.hintBadChoice;
           this.choiceStatusLogo = 'qcm_result_ko';
         }
       }
@@ -69,8 +57,12 @@ export class QcmResultatComponent implements OnInit {
   }
 
   resultImage(): SafeStyle {
-    return this.sanitizer.bypassSecurityTrustStyle(
-      `url(./assets/images/${this.choiceImage}.png) center / 100% no-repeat`);
+    if (this.activeChoice) {
+      return this.sanitizer.bypassSecurityTrustStyle(
+        `url(./assets/images/${this.activeChoice.responseImage}.png) center / 100% no-repeat`);
+    } else {
+      return undefined;
+    }
   }
 
 }

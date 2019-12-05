@@ -65,36 +65,4 @@ export interface MobilityMissionQcm extends MobilityMissionStep, Visitable {
    * liste des choix
    */
   choices: Choice[];
-  /**
-   *
-   */
-  imageGoodChoice: string;
-  /**
-   *
-   */
-  faceGoodChoice: string;
-  /**
-   *
-   */
-  faceNameGoodChoice: string;
-  /**
-   *
-   */
-  hintGoodChoice: string;
-  /**
-   *
-   */
-  imageBadChoice: string;
-  /**
-   *
-   */
-  faceBadChoice: string;
-  /**
-   *
-   */
-  faceNameBadChoice: string;
-  /**
-   *
-   */
-  hintBadChoice: string;
 }

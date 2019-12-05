@@ -7,11 +7,11 @@
     <div class="etapes-qcm-resultat-logo">
         <img src="./assets/icons/{{choiceStatusLogo}}.png">
     </div>
-    <img height="80%" src="./assets/icons/{{choiceFaceImage}}.png">
+    <img height="80%" src="./assets/icons/{{activeChoice?.responseFace}}.png">
     <div class="etapes-qcm-resultat-hint-divider"></div>
     <div fxLayout="column">
-      <div class="etapes-qcm-resultat-face-name">{{choiceFaceName}}</div>
-      <div class="etapes-qcm-resultat-hint-text">{{choiceHintText}}</div>
+      <div class="etapes-qcm-resultat-face-name">{{activeChoice?.responseFaceName}}</div>
+      <div class="etapes-qcm-resultat-hint-text">{{activeChoice?.responseHint}}</div>
     </div>
   </div>
 </div>
