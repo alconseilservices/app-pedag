@@ -63,7 +63,7 @@ export class ImageInteractiveComponent implements OnInit {
   }
 
   computeHeight(indice: Indication): SafeStyle {
-    return this.sanitizer.bypassSecurityTrustStyle(((indice.height * 100) / 1229) + '%');
+    return this.sanitizer.bypassSecurityTrustStyle(((indice.height * 100) / 681) + '%');
   }
 
   computeX(indice: Indication): SafeStyle {

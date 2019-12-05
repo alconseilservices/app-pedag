@@ -8,6 +8,22 @@ export interface MobilityMission extends DevMode {
   /**
    *
    */
+  creditsPicto: string;
+  /**
+   *
+   */
+  creditsTralalere: string;
+  /**
+   *
+   */
+  creditsTransilien: string;
+  /**
+   *
+   */
+  creditsMain: string;
+  /**
+   *
+   */
   playerScore: number;
   /**
    * nom de la vidéo mp4 d'introduction ./assets/videos/${videoIntro}

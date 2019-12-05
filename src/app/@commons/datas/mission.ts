@@ -3,6 +3,19 @@ import { Path } from '../models/mobility-mission-step';
 
 export const Mission: MobilityMission = {
   devMode: true,
+  creditsPicto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet',
+  creditsTransilien: `
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
+    consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.$'
+  `,
+  creditsTralalere: `
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
+    consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.$'
+  `,
+  creditsMain: `
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
+    consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.$'
+  `,
   playerScore: 0,
   videoIntro: '3_Fonctionnement_d_une_centrale_photovoltaique_1.mp4',
   description: `
@@ -27,9 +40,9 @@ export const Mission: MobilityMission = {
         {
           hidden: false,
           width: 200,
-          height: 150,
-          x: 705,
-          y: 41,
+          height: 200,
+          x: 100,
+          y: 150,
           text: 'Le signal d\'alarme doit-être utilisé seulement en cas d\'urgence. \
           En cas de malaise voyageur, il ne faut pas tirer le signal d’alarme mais appeler \
           le 3117. Tout abus est passible d\'une amende',
@@ -55,17 +68,29 @@ export const Mission: MobilityMission = {
         {
           value: 'Vous restez dans votre train jusqu\'à Paris.',
           goodChoice: false,
-          score: 1
+          score: 1,
+          responseImage: 'test_decorB',
+          responseFace: 'face',
+          responseFaceName: 'Inès',
+          responseHint: 'Regardons le plan à nouveau. Il y a peut-être un itinéraire avec moins de changements.'
         },
         {
           value: 'Vous changez à Ermont Eaubonne pour prendre la ligne H.',
           goodChoice: false,
-          score: 1
+          score: 1,
+          responseImage: 'test_decorB',
+          responseFace: 'face',
+          responseFaceName: 'Inès',
+          responseHint: 'Regardons le plan à nouveau. Il y a peut-être un itinéraire avec moins de changements.'
         },
         {
           value: 'Vous changez à Ermont Eaubonne pour prendre la ligne J.',
           goodChoice: true,
-          score: 1
+          score: 1,
+          responseImage: 'test_decorB2',
+          responseFace: 'face_man',
+          responseFaceName: 'Yanis',
+          responseHint: 'Ça y est on arrive ! Préparez-vous à descendre.'
         }
       ],
       imageGoodChoice: 'test_decorB2',

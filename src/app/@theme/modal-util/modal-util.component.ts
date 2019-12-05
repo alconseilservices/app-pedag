@@ -1,19 +1,39 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { Router } from '@angular/router';
+import { MissionsService } from 'src/app/@commons/services/missions.service';
+import { MobilityMission } from 'src/app/@commons/models/mobility-mission';
 
 
 @Component({
   selector: 'app-theme-modal-util',
   template:
     `<div class="modal-util-container">
-
+      <div class="modal-util-container-main" fxLayout="column" fxLayoutGap="40px">
+        <img class="modal-util-close" (click)="doExit()" src="./assets/icons/close.png">
+        <div fxLayout="row" fxLayoutAlign="40px" fxLayoutAlign="center end">
+          <div class="modal-util-title-icon"></div>
+          <div class="modal-util-title-text">Crédits</div>
+        </div>
+        <div class="modal-util-credits-text-main" [innerHTML]="mission.creditsMain"></div>
+        <div fxLayout="row" fxLayoutGap="40px">
+          <div fxLayout="column">
+            <div class="modal-util-credits-logo-transilien"></div>
+            <div class="modal-util-credits-text-main" [innerHTML]="mission.creditsTransilien"></div>
+          </div>
+          <div fxLayout="column">
+            <div class="modal-util-credits-logo-tralalere"></div>
+            <div class="modal-util-credits-text-main" [innerHTML]="mission.creditsTransilien"></div>
+          </div>
+        </div>
+        <div class="modal-util-credits-text-main" [innerHTML]="mission.creditsPicto"></div>
+      </div>
     </div>`
   ,
   styles: [
     `.modal-util-container {
       position: absolute;
-      width: 75vw;
-      height: 65vh;
+      width: 80vw;
+      height: 75vh;
       background: rgba(60,55,50,.9);
       box-shadow: 0px 0px 30px rgba(32, 32, 32, 0.5);
       border-radius: 15px;
@@ -21,60 +41,67 @@ import { Router } from '@angular/router';
       left: 50%;
       transform: translate(-50%, -50%);
     }`,
-    `.confirm-popin-close {
+    `.modal-util-container-main {
       position: absolute;
-      top: 10px;
-      right: 10px;
+      overflow: auto;
+      height: 100%;
+      width: 100%;
+      padding: 3vh;
+    }`,
+    `.modal-util-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
       width: 5vh;
       height: 5vh;
-      background-image: url(./assets/icons/close.png);
-      background-repeat: no-repeat;
-      background-size: 100%;
-      border-radius: 50%;
     }`,
-    `.confirm-popin-text {
-      position: absolute;
-      left: 13.83%;
-      right: 11.28%;
-      top: 25.54%;
-      bottom: 49.85%;
-      text-align: center;
+    `.modal-util-title-icon {
+      background: url(./../../../assets/icons/credits_white.png) center / cover no-repeat;
+      height: 5vh;
+      width: 5vh;
+    }`,
+    `.modal-util-title-text {
+      font-family: 'Avenir-Heavy';
+      font-size: 4vh;
+      line-height: 3vh;
+      margin-left: 20px;
       color: white;
     }`,
-    `.confirm-popin-yes {
-      position: absolute;
-      left: 20.13%;
-      right: 51.14%;
-      top: 66.15%;
-      bottom: 20.31%;
-      line-height: 3.5vh;
-      text-align: center;
-      color: #3C3732;
-      background: white;
-      border-radius: 100px;
+    `.modal-util-credits-text-main {
+      font-family: 'Avenir';
+      font-size: 2.8vh;
+      color: white;
     }`,
-    `.confirm-popin-no {
-      position: absolute;
-      left: 53.83%;
-      right: 17.45%;
-      top: 66.15%;
-      bottom: 20.31%;
-      line-height: 3.5vh;
-      text-align: center;
-      color: #3C3732;
-      background: white;
-      border-radius: 100px;
+    `.modal-util-credits-logo-transilien {
+      overflow: hidden;
+      background: url('./../../../assets/images/Nvx_logo_TN_2019_CMJN_complet 1.png') no-repeat;
+      height: 8vh;
+    }`,
+    `.modal-util-credits-logo-tralalere {
+      overflow: hidden;
+      background: url('./../../../assets/images/tralalere_logo.png') left / 30% no-repeat;
+      height: 8vh;
     }`
   ]
 })
 export class ModalUtilComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  mission: MobilityMission;
+  @Output() action: EventEmitter<string> = new EventEmitter<string>();
+
+  constructor(
+    private router: Router,
+    private service: MissionsService
+  ) {
+    this.service.missionMobilite()
+      .subscribe((mission: MobilityMission) => this.mission = mission);
+  }
 
   ngOnInit() {
   }
 
   doExit() {
+    this.action.emit('exit');
   }
 
 }

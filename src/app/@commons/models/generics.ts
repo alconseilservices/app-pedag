@@ -97,6 +97,22 @@ export interface Choice extends Activate {
    *
    */
   score: number;
+  /**
+   *
+   */
+  responseImage: string;
+  /**
+   *
+   */
+  responseFace: string;
+  /**
+   *
+   */
+  responseFaceName: string;
+  /**
+   *
+   */
+  responseHint: string;
 }
 /**
  * Représente les données nécessaires pour afficher une image en fond d'une `div`.

@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <title>Indication location</title>
+    <style>
+      .container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .image {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 66.50390625vh;
+        width: calc(66.50390625vh * 1.80469897209985);
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url();
+        text-align: center;
+      }
+      .buttonBar {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(34, 243, 45, 0.3);
+      }
+      .zoneCliquable {
+        position: absolute;
+        border: dashed saddlebrown;
+        background-color: rgba(65, 87, 99, 0.29);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="buttonBar">
+          <form>
+              <input type="file"
+              id="avatar" name="avatar"
+              accept="image/png">
+              <label for="zoneCliquableX">top (max 1229)</label>
+              <input name="zoneCliquableX" id="zoneCliquableX" value="0" type="number" placeholder="left (up to 1229px)">
+              <label for="zoneCliquableY">left (max 681)</label>
+              <input id="zoneCliquableY" value="0" type="number" placeholder="top (up to 681px)">
+              <label for="zoneCliquableWidth">width (max 1229)</label>
+              <input id="zoneCliquableWidth" value="200" type="number" placeholder="width (up to 1229px)">
+              <label for="zoneCliquableHeight">height (max 681)</label>
+              <input id="zoneCliquableHeight" value="100" type="number" placeholder="height (up to 681px)">
+          </form>
+        </div>
+      <div id="imageElement" class="image">
+        <img id="theImage" style="box-shadow: 0px 0px 20px #3c3732;" height="100%" width="100%">
+        <div id="zoneCliquable" class="zoneCliquable"></div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      window.onload = function(e) {
+        computeZoneCliquable();
+      }
+      window.onresize = function(e) {
+        console.log(document.getElementById('imageElement').style.height);
+        //document.getElementById('imageElement').style.width =
+      }
+      document.getElementById('avatar').onchange = function(e) {
+        console.log(this.files[0]);
+
+        var fr = new FileReader();
+        fr.onload = function () {
+          console.log(fr.result);
+          document.getElementById('theImage').src = fr.result;
+        }
+        fr.readAsDataURL(this.files[0]);
+      };
+      document.getElementById('zoneCliquableX').onchange = function(e) {
+        computeZoneCliquable();
+      };
+      document.getElementById('zoneCliquableY').onchange = function(e) {
+        computeZoneCliquable();
+      };
+      document.getElementById('zoneCliquableWidth').onchange = function(e) {
+        computeZoneCliquable();
+      };
+      document.getElementById('zoneCliquableHeight').onchange = function(e) {
+        computeZoneCliquable();
+      };
+      function computeZoneCliquable() {
+        document.getElementById('zoneCliquable').style.left = ((parseInt(document.getElementById('zoneCliquableX').value) * 100) / 1229)+ '%';
+        document.getElementById('zoneCliquable').style.top = ((parseInt(document.getElementById('zoneCliquableY').value) * 100) / 681)+ '%';
+        document.getElementById('zoneCliquable').style.width = ((parseInt(document.getElementById('zoneCliquableWidth').value) * 100) / 1229)+ '%';
+        document.getElementById('zoneCliquable').style.height = ((parseInt(document.getElementById('zoneCliquableHeight').value) * 100) / 681)+ '%';
+      }
+    </script>
+  </body>
+</html>

@@ -15,7 +15,7 @@ export class ModalUtilService {
     private injector: Injector
   ) {}
 
-  popin(): any {
+  popin(): EventEmitter<string> {
 
     this.modalUtilComponentRef = this.componentFactoryResolver
       .resolveComponentFactory(ModalUtilComponent)
@@ -28,7 +28,7 @@ export class ModalUtilService {
 
     document.body.appendChild(domElem);
 
-    return undefined;
+    return this.modalUtilComponentRef.instance.action;
   }
 
   popout() {

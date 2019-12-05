@@ -19,7 +19,9 @@ export class HomeIndexComponent implements OnInit {
   }
 
   showCredits(): void {
-    this.modalUtil.popin();
+    this.modalUtil.popin()
+        .subscribe((e: string) => this.modalUtil.popout());
+
   }
 
 }
