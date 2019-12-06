@@ -41,6 +41,16 @@ export const Mission: MobilityMission = {
           hidden: false,
           width: 136.44140625,
           height: 125.56640625,
+          x: 300,
+          y: 100,
+          text: 'Le signal d\'alarme doit-être utilisé seulement en cas d\'urgence. \
+          En cas de malaise voyageur, il ne faut pas tirer le signal d’alarme mais appeler \
+          le 3117. Tout abus est passible d\'une amende'
+        },
+        {
+          hidden: false,
+          width: 136.44140625,
+          height: 125.56640625,
           x: 183.84765625,
           y: 448.60546875,
           text: 'Le signal d\'alarme doit-être utilisé seulement en cas d\'urgence. \

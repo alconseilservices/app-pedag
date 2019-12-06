@@ -27,18 +27,19 @@
           sceneElWidth="75.8676351896691%"
           sceneElHeight="71.42753864172%"
           sceneElTop="7%"
+          *ngIf="activeIndice.image"
           sceneElCenterH="true"
           class="etapes-image-interactive-modal-img-holder">
-          <img src="./assets/images/{{activeIndice.image.file}}.png"
+          <img src="./assets/images/{{activeIndice.image?.file}}.png"
                [style.position]="'relative'"
-               [style.top.%]="activeIndice.image.top"
-               [style.left.%]="activeIndice.image.left"
-               [style.height.%]="activeIndice.image.height">
+               [style.top.%]="activeIndice.image?.top"
+               [style.left.%]="activeIndice.image?.left"
+               [style.height.%]="activeIndice.image?.height">
       </div>
       <div appSceneElement
            sceneElWidth="90%"
-           sceneElHeight="15%"
-           sceneElTop="80%"
+           [sceneElHeight]="activeIndice.image ? '15%' : '90%'"
+           [sceneElTop]="activeIndice.image ? '80%' : '5%'"
            sceneElCenterH="true"
            class="etapes-image-interactive-modal-text"
            [innerHTML]="activeIndice.text"></div>
