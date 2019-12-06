@@ -1,4 +1,4 @@
-import { Indication, Visitable, Choice, HintText } from './generics';
+import { Indication, Visitable, Choice, HintText, Completable } from './generics';
 /**
  *
  */
@@ -56,7 +56,7 @@ export interface MobilityMissionInteractiveImage extends MobilityMissionStep, Vi
 /**
  * Spécification d'une étape QCM
  */
-export interface MobilityMissionQcm extends MobilityMissionStep, Visitable {
+export interface MobilityMissionQcm extends MobilityMissionStep, Visitable, Completable {
   /**
    *
    */

@@ -34,6 +34,8 @@
         position: absolute;
         border: dashed saddlebrown;
         background-color: rgba(65, 87, 99, 0.29);
+        resize: both;
+        overflow: auto;
       }
     </style>
   </head>
@@ -94,6 +96,15 @@
         document.getElementById('zoneCliquable').style.top = ((parseInt(document.getElementById('zoneCliquableY').value) * 100) / 681)+ '%';
         document.getElementById('zoneCliquable').style.width = ((parseInt(document.getElementById('zoneCliquableWidth').value) * 100) / 1229)+ '%';
         document.getElementById('zoneCliquable').style.height = ((parseInt(document.getElementById('zoneCliquableHeight').value) * 100) / 681)+ '%';
+      }
+      function computeZoneCliquableIHMTOInput() {
+        document.getElementById('zoneCliquableX').value = document.getElementById('zoneCliquable').clientLeft;
+        document.getElementById('zoneCliquableY').value = document.getElementById('zoneCliquable').clientTop;
+        document.getElementById('zoneCliquableWidth').value = document.getElementById('zoneCliquable').clientWidth;
+        document.getElementById('zoneCliquableHeight').value = document.getElementById('zoneCliquable').clientHeight;
+      }
+      document.getElementById('zoneCliquable').onmouseup = function(e) {
+        computeZoneCliquableIHMTOInput();
       }
     </script>
   </body>

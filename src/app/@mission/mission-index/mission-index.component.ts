@@ -122,7 +122,21 @@ export class MissionIndexComponent implements OnInit {
   }
 
   computeProgress(): number {
-    return ((this.etapeIndex + 1) * 100) / this.mission.steps.length;
+    const allQcmSteps = this.mission.steps.filter(s => s.choices).length;
+    const allCompletedQcmSteps = this.mission.steps.filter(s => s.choices && s.completed).length;
+    return (allCompletedQcmSteps * 100) / allQcmSteps;
+  }
+
+  showProgress(): boolean {
+    if (
+      String(this.router.url).endsWith(Path.ETAPE_QCM_DECISION) ||
+      String(this.router.url).endsWith(Path.ETAPE_QCM_INDEX) ||
+      String(this.router.url).endsWith(Path.ETAPE_QCM_RESULTAT)
+    ) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   headerIconName(): string {

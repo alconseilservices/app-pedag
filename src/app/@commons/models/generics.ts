@@ -18,6 +18,16 @@ export interface Ordered {
   index: number;
 }
 /**
+ *
+ */
+export interface Dirty {
+  /**
+   *
+   * @required
+   */
+  dirty?: boolean;
+}
+/**
  * Permet d'assigner une propriété d'état à un objet activable.
  */
 export interface Activate {
@@ -37,6 +47,19 @@ export interface Visitable {
    */
   visited?: boolean;
 }
+/**
+ *
+ */
+export interface Completable {
+  /**
+   *
+   * @required
+   */
+  completed?: boolean;
+}
+/**
+ *
+ */
 export interface ScoredVideo extends Visitable {
   /**
    *
@@ -84,7 +107,7 @@ export interface ImageScaler {
 /**
  *
  */
-export interface Choice extends Activate {
+export interface Choice extends Activate, Dirty {
   /**
    *
    */

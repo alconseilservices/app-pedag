@@ -45,6 +45,11 @@ export class QcmResultatComponent implements OnInit {
       this.activeChoice = this.etape.choices.find(c => c.activ);
       if (this.activeChoice) {
         if (this.activeChoice.goodChoice) {
+          this.etape.completed = true;
+          if (!this.activeChoice.dirty) { // add choice score to player score if first choice made
+            this.mission.playerScore += this.activeChoice.score;
+            this.activeChoice.dirty = true;
+          }
           this.choiceStatusLogo = 'qcm_result_ok';
         } else {
           this.choiceStatusLogo = 'qcm_result_ko';
