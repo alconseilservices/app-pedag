@@ -1,6 +1,6 @@
 <div class="etapes-image-interactive-container">
   <img class="etapes-image-interactive-container-bg"
-       src="./assets/images/{{etape.backgroundImage}}.png">
+       src="./assets/mission/{{etape.backgroundImage}}.png">
   <div class="etapes-image-interactive-indication-zone"
        [ngClass]="{'etapes-image-interactive-indication-zone-dev': mission.devMode}"
        *ngFor="let indice of etape.indications" (click)="showIndice(indice)"
@@ -13,7 +13,7 @@
 </div>
 <div  appSceneElement *ngIf="activeIndice"
       sceneElWidthRatio="1.79147207241075"
-      sceneElHeight="67.5400390625vh"
+      [sceneElHeight]="activeIndice.image ? '67.5400390625vh' : '40vh'"
       sceneElCenterV="true"
       sceneElCenterH="true"
       class="etapes-image-interactive-modal">
@@ -30,7 +30,7 @@
           *ngIf="activeIndice.image"
           sceneElCenterH="true"
           class="etapes-image-interactive-modal-img-holder">
-          <img src="./assets/images/{{activeIndice.image?.file}}.png"
+          <img src="./assets/mission/{{activeIndice.image?.file}}.png"
                [style.position]="'relative'"
                [style.top.%]="activeIndice.image?.top"
                [style.left.%]="activeIndice.image?.left"
@@ -38,8 +38,9 @@
       </div>
       <div appSceneElement
            sceneElWidth="90%"
-           [sceneElHeight]="activeIndice.image ? '15%' : '90%'"
-           [sceneElTop]="activeIndice.image ? '80%' : '5%'"
+           [sceneElHeight]="activeIndice.image ? '15%' : ''"
+           [sceneElTop]="activeIndice.image ? '80%' : ''"
+           [sceneElCenterV]="activeIndice.image ? false : true"
            sceneElCenterH="true"
            class="etapes-image-interactive-modal-text"
            [innerHTML]="activeIndice.text"></div>

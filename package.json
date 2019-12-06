@@ -1,6 +1,6 @@
 {
   "name": "sncf-mobilite",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "main.js",
   "author": "Tralalere SA",
   "scripts": {
@@ -15,7 +15,7 @@
     "electron:pack:mac": "ng build --base-href ./ && electron-builder --config ./electron-builder.yml --dir --mac",
     "electron:dist:win": "ng build --base-href ./ && electron-builder --config ./electron-builder.yml --win",
     "electron:dist:mac": "ng build --base-href ./ && electron-builder --config ./electron-builder.yml --mac",
-    "electron:dist:release": "ng build --prod --base-href ./ && electron-builder --config ./electron-builder.yml --win",
+    "electron:win:release": "ng build --prod --base-href ./ && electron-builder --config ./electron-builder.yml --win",
     "electron:mac:release": "ng build --prod --base-href ./ && electron-builder --config ./electron-builder.yml --mac",
     "cordova:build": "ng build --base-href ./ && cordova build android",
     "cordova:build:release": "ng build --prod --base-href ./ && cordova build android --release",
@@ -43,7 +43,6 @@
     "electron-aspectratio": "^1.0.1",
     "ng-inline-svg": "^8.3.0",
     "ng2-pdf-viewer": "^5.2.4",
-    "ngx-electron": "^2.2.0",
     "remove": "^0.1.5",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",

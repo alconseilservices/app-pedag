@@ -56,7 +56,7 @@ import { MobilityMission } from 'src/app/@commons/models/mobility-mission';
       height: 5vh;
     }`,
     `.modal-util-title-icon {
-      background: url(./../../../assets/icons/credits_white.png) center / cover no-repeat;
+      background: url(./assets/icons/credits_white.png) center / cover no-repeat;
       height: 5vh;
       width: 5vh;
     }`,
@@ -74,12 +74,12 @@ import { MobilityMission } from 'src/app/@commons/models/mobility-mission';
     }`,
     `.modal-util-credits-logo-transilien {
       overflow: hidden;
-      background: url('./../../../assets/images/Nvx_logo_TN_2019_CMJN_complet 1.png') no-repeat;
+      background: url('./assets/images/Nvx_logo_TN_2019_CMJN_complet 1.png') no-repeat;
       height: 8vh;
     }`,
     `.modal-util-credits-logo-tralalere {
       overflow: hidden;
-      background: url('./../../../assets/images/tralalere_logo.png') left / 30% no-repeat;
+      background: url('./assets/images/tralalere_logo.png') left / 30% no-repeat;
       height: 8vh;
     }`
   ]

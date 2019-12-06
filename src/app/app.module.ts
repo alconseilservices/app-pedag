@@ -7,7 +7,6 @@ import { GlobalErrorHandlerService } from './@commons/util/global-error-handler.
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ConfirmPopinComponent } from './@theme/confirm-popin/confirm-popin.component';
 import { ThemeModule } from './@theme/theme.module';
-import { NgxElectronModule } from 'ngx-electron';
 import { ModalUtilComponent } from './@theme/modal-util/modal-util.component';
 
 @NgModule({
@@ -18,8 +17,7 @@ import { ModalUtilComponent } from './@theme/modal-util/modal-util.component';
     BrowserModule,
     AppRoutingModule,
     FlexLayoutModule,
-    ThemeModule,
-    NgxElectronModule
+    ThemeModule
   ],
   entryComponents: [
     ConfirmPopinComponent,

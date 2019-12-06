@@ -46,7 +46,7 @@ export class ImageInteractiveComponent implements OnInit {
 
   background(): SafeStyle {
     return this.sanitizer.bypassSecurityTrustStyle(
-      `center center / auto no-repeat url(./assets/images/${this.etape.backgroundImage}.png`
+      `center center / auto no-repeat url(./assets/mission/${this.etape.backgroundImage}.png`
     );
   }
 

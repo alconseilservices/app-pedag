@@ -64,7 +64,7 @@ export class QcmResultatComponent implements OnInit {
   resultImage(): SafeStyle {
     if (this.activeChoice) {
       return this.sanitizer.bypassSecurityTrustStyle(
-        `url(./assets/images/${this.activeChoice.responseImage}.png) center / 100% no-repeat`);
+        `url(./assets/mission/${this.activeChoice.responseImage}.png) center / 100% no-repeat`);
     } else {
       return undefined;
     }

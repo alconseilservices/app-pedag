@@ -3,7 +3,6 @@ import { UserConfirmedAction, ConfirmedAction } from '../confirm-popin/confirm-p
 import { ConfirmPopinService } from '../confirm-popin/confirm-popin.service';
 import { Router } from '@angular/router';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
-import { ElectronService } from 'ngx-electron';
 
 
 @Component({
@@ -23,8 +22,7 @@ export class HeaderComponent implements OnInit {
   constructor(
     private confirmPopinService: ConfirmPopinService,
     private router: Router,
-    private sanitizer: DomSanitizer,
-    private electronService: ElectronService
+    private sanitizer: DomSanitizer
   ) {}
 
   ngOnInit() {
@@ -49,7 +47,11 @@ export class HeaderComponent implements OnInit {
   }
 
   maximize(): void {
-    this.electronService.ipcRenderer.sendSync('switchFullScreen');
+    document.documentElement.requestFullscreen();
+  }
+
+  minimize(): void {
+    document.exitFullscreen();
   }
 
   titleIconBackground(): SafeStyle {
