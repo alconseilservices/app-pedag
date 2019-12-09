@@ -242,6 +242,37 @@ export const Mission: MobilityMission = {
           responseFaceName: 'Inès',
           responseHint: 'Regardons le plan à nouveau. Il y a peut-être un itinéraire  avec moins de changements.'
      }
+      ],
+      indications: [
+        {
+          hidden: false,
+          width: 210,
+          height: 90,
+          x: 0,
+          y: 375,
+          text: `
+            Le train fonctionne grâce à l\'électricité qui est acheminée par la caténaire,
+            Il émet peu de gaz à effet de serre. Il est interdit de monter sur un train ou de s'approcher de la caténaire.
+            Le risque électrique est présent 24h/24 et 7j/7 !
+          `,
+          image: {
+            file: 'S02-IC-01',
+            left: 0,
+            top: 0,
+            height: 100
+          }
+        },
+        {
+          hidden: false,
+          width: 310,
+          height: 165,
+          x: 880,
+          y: 370,
+          text: `
+            Le bus est un mode de transport pratique en ville. Mais pour de plus
+            grandes distances, le train est plus rapide.
+          `
+        }
       ]
     }
   ],

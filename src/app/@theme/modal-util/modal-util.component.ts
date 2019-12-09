@@ -8,7 +8,7 @@ import { MobilityMission } from 'src/app/@commons/models/mobility-mission';
   selector: 'app-theme-modal-util',
   template:
     `<div class="modal-util-container">
-      <div class="modal-util-container-main" fxLayout="column" fxLayoutGap="40px">
+      <div class="modal-util-container-main" fxLayout="column" fxLayoutGap="30px">
         <img class="modal-util-close" (click)="doExit()" src="./assets/icons/close.png">
         <div fxLayout="row" fxLayoutAlign="40px" fxLayoutAlign="center end">
           <div class="modal-util-title-icon"></div>
@@ -16,11 +16,11 @@ import { MobilityMission } from 'src/app/@commons/models/mobility-mission';
         </div>
         <div class="modal-util-credits-text-main" [innerHTML]="mission.creditsMain"></div>
         <div fxLayout="row" fxLayoutGap="40px">
-          <div fxLayout="column">
+          <div fxLayout="column" fxLayoutGap="20px">
             <div class="modal-util-credits-logo-transilien"></div>
             <div class="modal-util-credits-text-main" [innerHTML]="mission.creditsTransilien"></div>
           </div>
-          <div fxLayout="column">
+          <div fxLayout="column" fxLayoutGap="20px">
             <div class="modal-util-credits-logo-tralalere"></div>
             <div class="modal-util-credits-text-main" [innerHTML]="mission.creditsTransilien"></div>
           </div>
@@ -74,12 +74,12 @@ import { MobilityMission } from 'src/app/@commons/models/mobility-mission';
     }`,
     `.modal-util-credits-logo-transilien {
       overflow: hidden;
-      background: url('./assets/images/Nvx_logo_TN_2019_CMJN_complet 1.png') no-repeat;
+      background: url('./assets/images/Nvx_logo_TN_2019_CMJN_complet 1.png') left / auto 100% no-repeat;
       height: 8vh;
     }`,
     `.modal-util-credits-logo-tralalere {
       overflow: hidden;
-      background: url('./assets/images/tralalere_logo.png') left / 30% no-repeat;
+      background: url('./assets/images/tralalere_logo.png') left / auto 100% no-repeat;
       height: 8vh;
     }`
   ]
