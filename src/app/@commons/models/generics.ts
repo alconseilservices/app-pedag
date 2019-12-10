@@ -1,9 +1,13 @@
 /**
+ * Propriété d'état pour activer/désactiver le mode développement.
  *
+ *
+ * Le mode développement permet de mettre en évidence des éléments
+ * de l'IHM afin de faciliter le développement et le bug
  */
 export interface DevMode {
   /**
-   *
+   * true si le mode dev est active
    */
   devMode?: boolean;
 }
