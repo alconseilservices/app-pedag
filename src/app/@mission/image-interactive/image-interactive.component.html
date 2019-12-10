@@ -33,7 +33,8 @@
           <img src="./assets/mission/{{activeIndice.image?.file}}.png"
                [style.position]="'relative'"
                [style.top.%]="activeIndice.image?.top"
-               [style.left.%]="activeIndice.image?.left"
+               [style.left.%]="50"
+               [style.transform]="'translateX(-50%)'"
                [style.height.%]="activeIndice.image?.height">
       </div>
       <div appSceneElement
