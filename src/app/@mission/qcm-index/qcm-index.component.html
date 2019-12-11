@@ -7,7 +7,7 @@
     [style.left]="computeX(indice)" [style.top]="computeY(indice)"
     [style.height]="computeHeight(indice)" [style.width]="computeWidth(indice)">
     <img class="etapes-qcm-index-indice"
-     src="./assets/icons/interrest_point_anchor.png"
+    [src]="(!indice.hidden && !indice.visited) ? './assets/icons/Loupe.png' : './assets/icons/interrest_point_anchor.png'"
      [style.opacity]="computeIndicationVisibility(indice)">
 </div>
 <div  appSceneElement *ngIf="activeIndice"

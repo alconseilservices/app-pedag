@@ -2,7 +2,7 @@ import { MobilityMission } from '../models/mobility-mission';
 import { Path } from '../models/mobility-mission-step';
 
 export const Mission: MobilityMission = {
-  devMode: true,
+  devMode: false,
   creditsPicto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet',
   creditsTransilien: `
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
@@ -177,7 +177,7 @@ export const Mission: MobilityMission = {
           <br>-Voir les tarifs réduits selon la situation de sa famille (CMU, RSA, famille nombreuse, etc) sur Vianavigo.fr
           `,
           image: {
-            file: 'S02_IC_01',
+            file: 'S03_IC_01',
             left: 0,
             top: 0,
             height: 100
@@ -190,7 +190,7 @@ export const Mission: MobilityMission = {
           x: 590,
           y: 0,
           image: {
-            file: 'S02_IC_02',
+            file: 'S03_IC_02',
             left: 0,
             top: 0,
             height: 100
@@ -203,7 +203,7 @@ export const Mission: MobilityMission = {
           x: 825,
           y: 0,
           image: {
-            file: 'S02_IC_01',
+            file: 'S03_IC_03',
             left: 0,
             top: 0,
             height: 100
@@ -228,12 +228,6 @@ export const Mission: MobilityMission = {
           y: 230,
           // tslint:disable-next-line: max-line-length
           text: `Il est important de laisser descendre les autres voyageurs avant de monter dans le train, cela évite les conflits et le train peut repartir plus vite.`,
-          image: {
-            file: 'S04_IC_01',
-            left: 0,
-            top: 0,
-            height: 100
-          }
         },
         {
           hidden: true,
@@ -243,7 +237,7 @@ export const Mission: MobilityMission = {
           y: 230,
           // tslint:disable-next-line: max-line-length
           text: 'Il est dangereux de circuler en trottinette dans les gares et sur les quais. Un des risques est de tomber ou faire tomber quelqu\'un sur les rails. Cette action est aussi passible d\'une amende. ',
-          video: 'vid'
+          video:'S04_IC_02',
         },
         {
           hidden: true,
@@ -253,12 +247,6 @@ export const Mission: MobilityMission = {
           y: 230,
           // tslint:disable-next-line: max-line-length
           text: 'Lorsque le train passe, l\'air qu\'il déplace provoque un effet de souffle qui peut déséquilibrer, voire aspirer la personne et l\'entraîner sur les rails, sous les roues du train. ',
-          image: {
-            file: 'S04_IC_03',
-            left: 0,
-            top: 0,
-            height: 100
-          }
         },
       ]
     },
@@ -312,7 +300,7 @@ export const Mission: MobilityMission = {
           text: `Le signal d’alarme est réservé aux situations qui présentent un danger
           (feu, vitre cassée...). Un usage injustifié est passible d'une amende.`,
           image: {
-            file: 'S02-IC-04',
+            file: 'S05_IC_04',
             left: 0,
             top: 0,
             height: 100
@@ -328,7 +316,14 @@ export const Mission: MobilityMission = {
             Si vous êtes témoin d’une agression ou d'un malaise voyageur,
             le 3117 est le meilleur moyen de joindre les secours et d’assurer la prise en charge
            du voyageur à la gare suivante.
-          `
+          `,
+          image: {
+            file: 'S05_IC_05',
+            left: 0,
+            top: 0,
+            height: 100
+          }
+
         }
       ]
     },
@@ -412,59 +407,14 @@ export const Mission: MobilityMission = {
         }
       ],
       indications: [
-        {
-          hidden: false,
-          width: 300,
-          height: 200,
-          x: 300,
-          y: 300,
-          video: 'vid'
-        },
-      {
-        hidden: false,
-        width: 310,
-        height: 300,
-        x: 160,
-        y: 50,
-        text: `
-        -Ticket Origine-Destination : permet de voyager en train depuis sa gare de départ jusqu’à sa gare d’arrivée.
-        -Ticket Jeunes Week-end : ce forfait à prix réduit permet d’effectuer un nombre illimité de voyages, pendant
-        une journée, à l’intérieur des zones tarifaires choisies.
-        -Voir les tarifs réduits selon la situation de sa famille (CMU, RSA, famille nombreuse, etc) sur Vianavigo.fr
-        `,
-        image: {
-          file: 'S02_IC_01',
-          left: 0,
-          top: 0,
-          height: 100
-        }
-      },
-      {
-        hidden: false,
-        width: 230,
-        height: 150,
-        x: 590,
-        y: 0,
-        image: {
-          file: 'S02_IC_02',
-          left: 0,
-          top: 0,
-          height: 100
-        }
-      },
-      {
-        hidden: false,
-        width: 230,
-        height: 150,
-        x: 825,
-        y: 0,
-        image: {
-          file: 'S02_IC_01',
-          left: 0,
-          top: 0,
-          height: 100
-        }
-      },
+          {
+            hidden: false,
+            width: 300,
+            height: 200,
+            x: 300,
+            y: 300,
+            video: 'S07_IC_01',
+          },
     ]
     },
     {
@@ -495,27 +445,46 @@ export const Mission: MobilityMission = {
             height: 100
           }
         },
-        // {
-        //   hidden: true,
-        //   width: 180,
-        //   height: 100,
-        //   x: 390,
-        //   y: 140,
-        // },
-        // {
-        //   hidden: true,
-        //   width: 80,
-        //   height: 100,
-        //   x: 480,
-        //   y: 260,
-        // },
-        // {
-        //   hidden: true,
-        //   width: 250,
-        //   height: 430,
-        //   x: 920,
-        //   y: 100,
-        // },
+        {
+          hidden: true,
+          width: 180,
+          height: 100,
+          x: 390,
+          y: 140,
+           image: {
+            file: 'S08_IC_4',
+            left: 0,
+            top: 0,
+            height: 100
+          }
+
+        },
+        {
+          hidden: true,
+          width: 80,
+          height: 100,
+          x: 480,
+          y: 260,
+          image: {
+            file: 'S08_IC_02',
+            left: 0,
+            top: 0,
+            height: 100
+          }
+        },
+        {
+          hidden: true,
+          width: 250,
+          height: 430,
+          x: 920,
+          y: 100,
+          image: {
+            file: 'S08_IC_3',
+            left: 0,
+            top: 0,
+            height: 100
+          }
+        },
       ]
     },
     {
@@ -646,7 +615,7 @@ export const Mission: MobilityMission = {
         height: 570,
         x: 990,
         y: 100,
-        video: 'vid'
+        video:'S10_IC_01'
       }
       ]
     }

@@ -154,7 +154,10 @@ export class MissionIndexComponent implements OnInit {
   }
 
   showInsert(): boolean {
-    if (String(this.router.url).endsWith(Path.ETAPE_QCM_INDEX)) {
+    if (
+      String(this.router.url).endsWith(Path.ETAPE_QCM_INDEX) ||
+      String(this.router.url).endsWith(Path.ETAPE_IMAGE_INTERACTIVE)
+    ) {
       return true;
     } else {
       return false;
