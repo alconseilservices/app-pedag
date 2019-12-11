@@ -83,4 +83,18 @@ export class ImageInteractiveComponent implements OnInit {
     this.activeIndice = undefined;
   }
 
+  computeImageAsBg(): SafeStyle {
+    if (this.activeIndice) {
+      return this.sanitizer.bypassSecurityTrustStyle(
+        `url(./assets/mission/${this.activeIndice.image.file}.png) center / cover no-repeat`
+      );
+    } else {
+      return undefined;
+    }
+  }
+
+  videoPath(indice: Indication): string {
+    return `./assets/mission/${indice.video}.mp4`;
+  }
+
 }

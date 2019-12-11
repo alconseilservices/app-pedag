@@ -13,7 +13,7 @@
 </div>
 <div  appSceneElement *ngIf="activeIndice"
       sceneElWidthRatio="1.79147207241075"
-      [sceneElHeight]="activeIndice.image ? '67.5400390625vh' : '40vh'"
+      [sceneElHeight]="(activeIndice.image || activeIndice.video)? '67.5400390625vh' : ''"
       sceneElCenterV="true"
       sceneElCenterH="true"
       class="etapes-image-interactive-modal">
@@ -23,26 +23,17 @@
            class="etapes-image-interactive-modal-close"
            src="./assets/icons/cross.png"
            (click)="closeModal()">
-      <div appSceneElement
-          sceneElWidth="75.8676351896691%"
-          sceneElHeight="71.42753864172%"
-          sceneElTop="7%"
-          *ngIf="activeIndice.image"
-          sceneElCenterH="true"
-          class="etapes-image-interactive-modal-img-holder">
-          <img src="./assets/mission/{{activeIndice.image?.file}}.png"
-               [style.position]="'relative'"
-               [style.top.%]="activeIndice.image?.top"
-               [style.left.%]="50"
-               [style.transform]="'translateX(-50%)'"
-               [style.height.%]="activeIndice.image?.height">
+      <div class="etapes-image-interactive-modal-inner"
+        fxLayout="column" fxLayoutAlign="end center">
+        <div style="position: relative; width: 75%;" fxFlex *ngIf="activeIndice.video">
+            <app-theme-video-player
+              appSceneElement
+              sceneElWidth="100%"
+              sceneElCenterV="true"
+              [videoPath]="videoPath(activeIndice)"
+              sceneElCenterH="true"></app-theme-video-player>
+        </div>
+        <div style="width: 75%;" fxFlex [style.background]="computeImageAsBg()" *ngIf="activeIndice.image"></div>
+        <div *ngIf="activeIndice.text" class="etapes-image-interactive-modal-text" [innerHTML]="activeIndice.text"></div>
       </div>
-      <div appSceneElement
-           sceneElWidth="90%"
-           [sceneElHeight]="activeIndice.image ? '15%' : ''"
-           [sceneElTop]="activeIndice.image ? '80%' : ''"
-           [sceneElCenterV]="activeIndice.image ? false : true"
-           sceneElCenterH="true"
-           class="etapes-image-interactive-modal-text"
-           [innerHTML]="activeIndice.text"></div>
 </div>

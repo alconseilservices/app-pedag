@@ -26,7 +26,7 @@
        <div class="qcm-decision-choice-text"
             [innerHTML]="etape.choices[1]?.value"></div>
   </div>
-  <div appDimSync
+  <div appDimSync [style.opacity]="etape.choices[2] ? '1' : '0'"
        syncDim="true"
        syncHeight="50.78125vh"
        syncWidthRatio="0.698076923076923"

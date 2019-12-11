@@ -80,7 +80,7 @@ export const Mission: MobilityMission = {
           x: 0,
           y: 375,
           text: `
-            Le train fonctionne grâce à l\'électricité qui est acheminée par la caténaire,
+            Le train fonctionne grâce à l\'électricité qui est acheminée par la caténaire.
             Il émet peu de gaz à effet de serre. Il est interdit de monter sur un train ou de s'approcher de la caténaire.
             Le risque électrique est présent 24h/24 et 7j/7 !
           `,
@@ -104,7 +104,7 @@ export const Mission: MobilityMission = {
         },
         {
           hidden: true,
-          width: 310,
+          width: 230,
           height: 165,
           x: 880,
           y: 370,
@@ -162,58 +162,59 @@ export const Mission: MobilityMission = {
           responseFace: 'face_man',
           responseFaceName: 'Yanis',
           responseHint: 'Si on regardait l\'appli pour nous aider ?',
+        }
+      ],
+      indications: [
+        {
+          hidden: false,
+          width: 310,
+          height: 300,
+          x: 160,
+          y: 50,
+          text: `
+          -Ticket Origine-Destination : permet de voyager en train depuis sa gare de départ jusqu’à sa gare d’arrivée.
+          <br>-Ticket Jeunes Week-end : ce forfait à prix réduit permet d’effectuer un nombre illimité de voyages, pendant une journée, à l’intérieur des zones tarifaires choisies.
+          <br>-Voir les tarifs réduits selon la situation de sa famille (CMU, RSA, famille nombreuse, etc) sur Vianavigo.fr
+          `,
+          image: {
+            file: 'S02_IC_01',
+            left: 0,
+            top: 0,
+            height: 100
+          }
         },
-       [
-      {
-        hidden: false,
-        width: 310,
-        height: 300,
-        x: 160,
-        y: 50,
-        text: `
-        -Ticket Origine-Destination : permet de voyager en train depuis sa gare de départ jusqu’à sa gare d’arrivée.
-        -Ticket Jeunes Week-end : ce forfait à prix réduit permet d’effectuer un nombre illimité de voyages, pendant une journée, à l’intérieur des zones tarifaires choisies.
-        -Voir les tarifs réduits selon la situation de sa famille (CMU, RSA, famille nombreuse, etc) sur Vianavigo.fr
-        `,
-        image: {
-          file: 'S02_IC_01',
-          left: 0,
-          top: 0,
-          height: 100
+        {
+          hidden: false,
+          width: 230,
+          height: 150,
+          x: 590,
+          y: 0,
+          image: {
+            file: 'S02_IC_02',
+            left: 0,
+            top: 0,
+            height: 100
+          }
+        },
+        {
+          hidden: false,
+          width: 230,
+          height: 150,
+          x: 825,
+          y: 0,
+          image: {
+            file: 'S02_IC_01',
+            left: 0,
+            top: 0,
+            height: 100
+          }
         }
-      },
-      {
-        hidden: false,
-        width: 230,
-        height: 150,
-        x: 590,
-        y: 0,
-        image: {
-          file: 'S02_IC_02',
-          left: 0,
-          top: 0,
-          height: 100
-        }
-      },{
-        hidden: false,
-        width: 230,
-        height: 150,
-        x: 825,
-        y: 0,
-        image: {
-          file: 'S02_IC_01',
-          left: 0,
-          top: 0,
-          height: 100
-        }
-      },
-    ]
       ]
     },
     {
       path: Path.ETAPE_IMAGE_INTERACTIVE,
       insertText: {
-        value:`
+        value: `
         Votre train est à quai.<br><br> Identifiez les personnes qui ont un comportement gênant ou dangereux.
       `
       },
@@ -242,12 +243,7 @@ export const Mission: MobilityMission = {
           y: 230,
           // tslint:disable-next-line: max-line-length
           text: 'Il est dangereux de circuler en trottinette dans les gares et sur les quais. Un des risques est de tomber ou faire tomber quelqu\'un sur les rails. Cette action est aussi passible d\'une amende. ',
-          image: {
-            file: 'S04_IC_02',
-            left: 0,
-            top: 0,
-            height: 100
-          }
+          video: 'vid'
         },
         {
           hidden: true,
@@ -256,7 +252,7 @@ export const Mission: MobilityMission = {
           x: 1110,
           y: 230,
           // tslint:disable-next-line: max-line-length
-          text: 'Lorsque le train cartee, l\'air qu\'il déplace provoque un effet de souffle qui peut déséquilibrer, voire aspirer la personne sous le train (stop) et l\'entraîner sur les rails, sous les roues du train. ',
+          text: 'Lorsque le train passe, l\'air qu\'il déplace provoque un effet de souffle qui peut déséquilibrer, voire aspirer la personne et l\'entraîner sur les rails, sous les roues du train. ',
           image: {
             file: 'S04_IC_03',
             left: 0,
@@ -358,7 +354,7 @@ export const Mission: MobilityMission = {
           value: 'Vous changez à Ermont Eaubonne pour prendre la ligne H.',
           goodChoice: true,
           score: 0,
-          responseImage: 'S01_R1',
+          responseImage: 'S06_R1',
           responseFace: 'face_man',
           responseFaceName: 'Yanis',
           responseHint: 'Ca y est, on arrive ! Préparez-vous à descendre'
@@ -371,38 +367,9 @@ export const Mission: MobilityMission = {
           responseFace: 'face',
           responseFaceName: 'Inès',
           responseHint: 'Regardons le plan à nouveau. Il y a peut-être un itinéraire  avec moins de changements.'
-     }
+        }
       ],
       indications: [
-        {
-          hidden: false,
-          width: 210,
-          height: 90,
-          x: 0,
-          y: 375,
-          text: `
-            Le train fonctionne grâce à l\'électricité qui est acheminée par la caténaire,
-            Il émet peu de gaz à effet de serre. Il est interdit de monter sur un train ou de s'approcher de la caténaire.
-            Le risque électrique est présent 24h/24 et 7j/7 !
-          `,
-          image: {
-            file: 'S02-IC-01',
-            left: 0,
-            top: 0,
-            height: 100
-          }
-        },
-        {
-          hidden: false,
-          width: 310,
-          height: 165,
-          x: 880,
-          y: 370,
-          text: `
-            Le bus est un mode de transport pratique en ville. Mais pour de plus
-            grandes distances, le train est plus rapide.
-          `
-        }
       ]
     },
     {
@@ -418,7 +385,7 @@ export const Mission: MobilityMission = {
       choices: [
         {
           value: 'Vous prenez le souterrain en courant.',
-          goodChoice: true,
+          goodChoice: false,
           score: 1,
           responseImage: 'S07_R1',
           responseFace: 'face',
@@ -442,23 +409,17 @@ export const Mission: MobilityMission = {
           responseFace: 'face_man',
           responseFaceName: 'Yanis',
           responseHint: 'C\'est bon, on est arrivé à temps !',
+        }
+      ],
+      indications: [
+        {
+          hidden: false,
+          width: 300,
+          height: 200,
+          x: 300,
+          y: 300,
+          video: 'vid'
         },
-        [
-          {
-            hidden: false,
-            width: 300,
-            height: 200,
-            x: 300,
-            y: 300,
-            image: {
-              file: 'S07_IC_01',
-              left: 0,
-              top: 0,
-              height: 100
-            }
-          },
-        ],
-       [
       {
         hidden: false,
         width: 310,
@@ -490,7 +451,8 @@ export const Mission: MobilityMission = {
           top: 0,
           height: 100
         }
-      },{
+      },
+      {
         hidden: false,
         width: 230,
         height: 150,
@@ -504,7 +466,6 @@ export const Mission: MobilityMission = {
         }
       },
     ]
-      ]
     },
     {
       path: Path.ETAPE_IMAGE_INTERACTIVE,
@@ -524,7 +485,7 @@ export const Mission: MobilityMission = {
           y: 0,
           text: `
           - Navigo Semaine, Mois ou Annuel : ce forfait permet de voyager de manière illimitée à l'intérieur des zones tarifaires choisies.
-          - IMAGNE R : c'est un Navigo annuel à tarif réduit pour les jeunes.
+          <br>- IMAGNE R : c'est un Navigo annuel à tarif réduit pour les jeunes.
           Voir également les tarifs réduits selon la situation de sa famille (CMU, RSA, famille nombreuse, etc) sur vianavigo.fr
           `,
           image: {
@@ -534,27 +495,27 @@ export const Mission: MobilityMission = {
             height: 100
           }
         },
-        {
-          hidden: true,
-          width: 180,
-          height: 100,
-          x: 390,
-          y: 140,
-        },
-        {
-          hidden: true,
-          width: 80,
-          height: 100,
-          x: 480,
-          y: 260,
-        },
-        {
-          hidden: true,
-          width: 250,
-          height: 430,
-          x: 920,
-          y: 100,
-        },
+        // {
+        //   hidden: true,
+        //   width: 180,
+        //   height: 100,
+        //   x: 390,
+        //   y: 140,
+        // },
+        // {
+        //   hidden: true,
+        //   width: 80,
+        //   height: 100,
+        //   x: 480,
+        //   y: 260,
+        // },
+        // {
+        //   hidden: true,
+        //   width: 250,
+        //   height: 430,
+        //   x: 920,
+        //   y: 100,
+        // },
       ]
     },
     {
@@ -592,8 +553,9 @@ export const Mission: MobilityMission = {
           responseFace: 'face',
           responseFaceName: 'Inès',
           responseHint: 'Attendez, c\'est la D !',
-        },
-       [
+        }
+      ],
+      indications: [
       {
         hidden: false,
         width: 100,
@@ -646,7 +608,6 @@ export const Mission: MobilityMission = {
           height: 100
         }
       },
-    ]
       ]
     },
     {
@@ -676,25 +637,19 @@ export const Mission: MobilityMission = {
           responseFace: 'face_man',
           responseFaceName: 'Yanis',
           responseHint: 'On est arrivé !',
-        },
-       [
+        }
+      ],
+      indications: [
       {
         hidden: false,
         width: 230,
         height: 570,
         x: 990,
         y: 100,
-        image: {
-          file: 'S10_IC_01',
-          left: 0,
-          top: 0,
-          height: 100
-        }
-      },
-
-    ]
+        video: 'vid'
+      }
       ]
-    },
+    }
   ],
   keyMessages: [
     {
