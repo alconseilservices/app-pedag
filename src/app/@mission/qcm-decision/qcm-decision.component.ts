@@ -54,5 +54,25 @@ export class QcmDecisionComponent implements OnInit {
       }, 500);
     }
   }
+  /**
+   *
+   * @param cardIndex
+   */
+  resolveChoiceItem(cardIndex: number): Choice {
+    if (cardIndex === 1) {
+      if (this.etape.choices.length === 3) {
+        return this.etape.choices[1];
+      } else {
+        return undefined;
+      }
+    }
+    if (cardIndex === 2) {
+      if (this.etape.choices.length === 3) {
+        return this.etape.choices[2];
+      } else {
+        return this.etape.choices[1];
+      }
+    }
+  }
 
 }

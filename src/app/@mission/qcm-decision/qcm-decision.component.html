@@ -14,29 +14,29 @@
        <div class="qcm-decision-choice-text"
             [innerHTML]="etape.choices[0]?.value"></div>
       </div>
-  <div appDimSync
+  <div appDimSync [style.opacity]="resolveChoiceItem(1) ? '1' : '0'"
        syncDim="true"
        syncHeight="50.78125vh"
        syncWidthRatio="0.698076923076923"
-       (click)="selectChoice(etape.choices[1])"
+       (click)="selectChoice(resolveChoiceItem(1))"
        class="qcm-decision-choice"
        [style.marginTop.vh]="-10"
-       [ngClass]="{'qcm-decision-choice-activ': etape.choices[1]?.activ}"
+       [ngClass]="{'qcm-decision-choice-activ': resolveChoiceItem(1)?.activ}"
        [style.zIndex]="3">
        <div class="qcm-decision-choice-text"
-            [innerHTML]="etape.choices[1]?.value"></div>
+            [innerHTML]="resolveChoiceItem(1)?.value"></div>
   </div>
-  <div appDimSync [style.opacity]="etape.choices[2] ? '1' : '0'"
+  <div appDimSync
        syncDim="true"
        syncHeight="50.78125vh"
        syncWidthRatio="0.698076923076923"
        [style.zIndex]="4"
        class="qcm-decision-choice"
        [style.marginTop.vh]="10"
-       (click)="selectChoice(etape.choices[2])"
-       [ngClass]="{'qcm-decision-choice-activ': etape.choices[2]?.activ}"
+       (click)="selectChoice(resolveChoiceItem(2))"
+       [ngClass]="{'qcm-decision-choice-activ': resolveChoiceItem(2)?.activ}"
        [style.transform]="'rotate(23.83deg)'">
        <div class="qcm-decision-choice-text"
-            [innerHTML]="etape.choices[2]?.value"></div>
+            [innerHTML]="resolveChoiceItem(2)?.value"></div>
   </div>
 </div>

@@ -452,7 +452,7 @@ export const Mission: MobilityMission = {
           x: 390,
           y: 140,
            image: {
-            file: 'S08_IC_4',
+            file: 'S08_IC_03',
             left: 0,
             top: 0,
             height: 100
@@ -479,7 +479,7 @@ export const Mission: MobilityMission = {
           x: 920,
           y: 100,
           image: {
-            file: 'S08_IC_3',
+            file: 'S08_IC_04',
             left: 0,
             top: 0,
             height: 100
