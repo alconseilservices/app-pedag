@@ -21,6 +21,6 @@ export class IntroIndexComponent implements OnInit {
   }
 
   getVideoRelativeUrl() {
-    return './assets/videos/' + this.mission.videoIntro;
+    return './assets/mission/' + this.mission.videoIntro;
   }
 }

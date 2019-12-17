@@ -44,15 +44,20 @@ export class QcmResultatComponent implements OnInit {
     this.etape = this.mission.steps[this.etapeIndex] as MobilityMissionQcm;
     if (this.etape.choices) {
       this.activeChoice = this.etape.choices.find(c => c.activ);
+      const dirtyChoice = this.etape.choices.find(c => c.dirty);
       if (this.activeChoice) {
         if (this.activeChoice.goodChoice) {
           this.etape.completed = true;
-          if (!this.activeChoice.dirty) { // add choice score to player score if first choice made
+          if (!dirtyChoice) { // add choice score to player score if first choice made
             this.mission.playerScore += this.activeChoice.score;
             this.activeChoice.dirty = true;
           }
           this.choiceStatusLogo = 'qcm_result_ok';
         } else {
+          if (!dirtyChoice) { // add choice score to player score if first choice made
+            this.mission.playerScore += this.activeChoice.score;
+            this.activeChoice.dirty = true;
+          }
           this.choiceStatusLogo = 'qcm_result_ko';
         }
       }

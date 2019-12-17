@@ -17,11 +17,11 @@ export const Mission: MobilityMission = {
     consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
   `,
   playerScore: 0,
-  videoIntro: '3_Fonctionnement_d_une_centrale_photovoltaique_1.mp4',
+  videoIntro: 'video_intro',
   description: `
     Aider Yanis et Inès dans leur itinéraire.<br><br>Pour cela,
     vous devrez faire des choix. Attention à ne pas perdre trop de
-    temps afin d'arriver à temps pour la fête.<br><br>Bonne chance !
+    temps afin d'arriver à l'heure à la fête.<br><br>Bonne chance !
     `,
   steps: [
     {
@@ -50,38 +50,7 @@ export const Mission: MobilityMission = {
           responseImage: 'S01_R2',
           responseFace: 'face_frere',
           responseFaceName: 'Le frère',
-          responseHint: 'L\'appli est pas mal pour préparer son itinéraire.',
-          indications: [
-            {
-              hidden: false,
-              width: 210,
-              height: 90,
-              x: 0,
-              y: 375,
-              text: `
-                Le train fonctionne grâce à l\'électricité qui est acheminée par la caténaire.
-                Il émet peu de gaz à effet de serre. Il est interdit de monter sur un train ou de s'approcher de la caténaire.
-                Le risque électrique est présent 24h/24 et 7j/7 !
-              `,
-              image: {
-                file: 'S02_IC_01',
-                left: 0,
-                top: 0,
-                height: 100
-              }
-            },
-            {
-              hidden: false,
-              width: 320,
-              height: 150,
-              x: 390,
-              y: 350,
-              text: `
-                Le vélo, c'est écologique et pratique. Des abris sécurisés existent
-                pour garer son vélo. On y accède grâce à un abonnement sur la carte Navigo.
-                `,
-            }
-          ]
+          responseHint: 'Bon choix ! Vous aurez toutes les infos',
         },
         {
           value: 'Vous demandez à votre frère.',
@@ -124,10 +93,10 @@ export const Mission: MobilityMission = {
         },
         {
           hidden: true,
-          width: 320,
-          height: 150,
-          x: 390,
-          y: 350,
+          width: 110,
+          height: 250,
+          x: 650,
+          y: 400,
           text: `
             Le vélo, c'est écologique et pratique. Des abris sécurisés existent
             pour garer son vélo. On y accède grâce à un abonnement sur la carte Navigo.
@@ -192,7 +161,7 @@ export const Mission: MobilityMission = {
           responseImage: 'S03_R2',
           responseFace: 'face_man',
           responseFaceName: 'Yanis',
-          responseHint: 'Si on regardait l\'appli pour nous aider ?',
+          responseHint: 'Regardons la destination sur l’application.',
         }
       ],
       indications: [
@@ -268,7 +237,7 @@ export const Mission: MobilityMission = {
           y: 230,
           // tslint:disable-next-line: max-line-length
           text: 'Il est dangereux de circuler en trottinette dans les gares et sur les quais. Un des risques est de tomber ou faire tomber quelqu\'un sur les rails. Cette action est aussi passible d\'une amende. ',
-          video:'S04_IC_02',
+
         },
         {
           hidden: true,
@@ -278,6 +247,7 @@ export const Mission: MobilityMission = {
           y: 230,
           // tslint:disable-next-line: max-line-length
           text: 'Lorsque le train passe, l\'air qu\'il déplace provoque un effet de souffle qui peut déséquilibrer, voire aspirer la personne et l\'entraîner sur les rails, sous les roues du train. ',
+          video:'S04_IC_02',
         },
       ]
     },
@@ -320,7 +290,7 @@ export const Mission: MobilityMission = {
           height: 230,
           x: 380,
           y: 200,
-          text: 'Ce plan affiche toutes les lignes de train du réseau en Ile-de-france. Il permet de trouver votre itinéraire.',
+          text: 'Ce plan affiche toutes les lignes de train du réseau en Ile-de-France. Il permet de trouver votre itinéraire.',
         },
         {
           hidden: true,
@@ -371,7 +341,7 @@ export const Mission: MobilityMission = {
           value: 'Vous restez dans le RER C jusqu\'à Paris.',
           goodChoice: false,
           score: 1,
-          responseImage: 'S06-R1-R3',
+          responseImage: 'S06_R1',
           responseFace: 'face',
           responseFaceName: 'Inès',
           responseHint: 'Regardons le plan à nouveau. Je pense qu\'il doit y avoir un itinéraire plus rapide.'
@@ -380,16 +350,16 @@ export const Mission: MobilityMission = {
           value: 'Vous changez à Ermont Eaubonne pour prendre la ligne H.',
           goodChoice: true,
           score: 0,
-          responseImage: 'S06_R1',
+          responseImage: 'S06-R02',
           responseFace: 'face_man',
           responseFaceName: 'Yanis',
-          responseHint: 'Ca y est, on arrive ! Préparez-vous à descendre'
+          responseHint: 'Ça y est, on arrive ! Préparez-vous à descendre'
         },
         {
           value: 'Vous changez à Ermont Eaubonne pour prendre la ligne J.',
           goodChoice: false,
           score: 2,
-          responseImage: 'S06-R1-R3',
+          responseImage: 'S06_R1',
           responseFace: 'face',
           responseFaceName: 'Inès',
           responseHint: 'Regardons le plan à nouveau. Il y a peut-être un itinéraire  avec moins de changements.'
@@ -435,18 +405,18 @@ export const Mission: MobilityMission = {
           responseFace: 'face_man',
           responseFaceName: 'Yanis',
           responseHint: 'C\'est bon, on est arrivé à temps !',
+          indications: [
+            {
+              hidden: false,
+              width: 120,
+              height: 400,
+              x: 1100,
+              y: 180,
+              video: 'S07_IC_01',
+            },
+      ]
         }
       ],
-      indications: [
-          {
-            hidden: false,
-            width: 300,
-            height: 200,
-            x: 300,
-            y: 300,
-            video: 'S07_IC_01',
-          },
-    ]
     },
     {
       path: Path.ETAPE_IMAGE_INTERACTIVE,
@@ -466,7 +436,7 @@ export const Mission: MobilityMission = {
           y: 0,
           text: `
           - Navigo Semaine, Mois ou Annuel : ce forfait permet de voyager de manière illimitée à l'intérieur des zones tarifaires choisies.
-          <br>- IMAGNE R : c'est un Navigo annuel à tarif réduit pour les jeunes.
+          <br>- IMAGINE R : c'est un Navigo annuel à tarif réduit pour les jeunes.
           Voir également les tarifs réduits selon la situation de sa famille (CMU, RSA, famille nombreuse, etc) sur vianavigo.fr
           `,
           image: {
@@ -483,7 +453,7 @@ export const Mission: MobilityMission = {
           x: 390,
           y: 140,
            image: {
-            file: 'S08_IC_03',
+            file: 'S08_IC_3',
             left: 0,
             top: 0,
             height: 100
@@ -510,7 +480,7 @@ export const Mission: MobilityMission = {
           x: 920,
           y: 100,
           image: {
-            file: 'S08_IC_04',
+            file: 'S08_IC_4',
             left: 0,
             top: 0,
             height: 100
@@ -537,7 +507,7 @@ export const Mission: MobilityMission = {
           responseHint: 'Ce n\'est pas le bon train. Il ne s\'arrête pas à La plaine Stade de France. '
         },
         {
-          value: 'Le train à destination  de l\'Aéroport Charles de Gaulle, qui arrive voie  43 dans 4 minutes.',
+          value: 'Le train à destination  de l\'Aéroport Charles de Gaulle, qui arrive voie 43 dans 4 minutes.',
           goodChoice: true,
           score: 0,
           responseImage: 'S09_R2',
@@ -546,7 +516,7 @@ export const Mission: MobilityMission = {
           responseHint: 'C\'est le bon train, notre arrêt est affiché !',
         },
         {
-          value: 'Le train destination de Creil à quai, voie 41.',
+          value: 'Le train destination de Villiers le Bel à quai, voie 41.',
           goodChoice: false,
           score: 2,
           responseImage: 'S09_R3',
@@ -627,7 +597,7 @@ export const Mission: MobilityMission = {
           responseImage: 'S10_R1',
           responseFace: 'face',
           responseFaceName: 'Inès',
-          responseHint: 'Quelque chose me dit qu\'on aurait pas dû.'
+          responseHint: 'Quelque chose me dit qu\'on n\'aurait pas dû.'
         },
         {
           value: 'Vous laissez le train partir.',
@@ -637,23 +607,24 @@ export const Mission: MobilityMission = {
           responseFace: 'face_man',
           responseFaceName: 'Yanis',
           responseHint: 'On est arrivé !',
+          indications: [
+            {
+              hidden: false,
+              width: 140,
+              height: 250,
+              x: 580,
+              y: 350,
+              video: 'S10_IC_01'
+            }
+          ]
         }
       ],
-      indications: [
-      {
-        hidden: false,
-        width: 230,
-        height: 570,
-        x: 990,
-        y: 100,
-        video: 'S10_IC_01'
-      }
-      ]
+
     }
   ],
   keyMessages: [
     {
-      message : 'Préparer son itinéraire, c\'est voyager plus tranquille.',
+      message : 'Préparer son itinéraire, c\'est voyager plus tranquillement.',
       file: 'S01_R2',
       left: 0,
       top: 0,
@@ -703,9 +674,19 @@ export const Mission: MobilityMission = {
   ],
   endVideos: [
     {
-      file: 'vid',
+      file: 'video_conclusion_A',
       minScore: 0,
-      maxScore: 10
+      maxScore: 2
+    },
+    {
+      file: 'video_conclusion_B',
+      minScore: 3,
+      maxScore: 7
+    },
+    {
+      file: 'video_conclusion_C',
+      minScore: 8,
+      maxScore: 11
     }
   ]
 };

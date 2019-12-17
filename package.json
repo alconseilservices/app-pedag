@@ -1,6 +1,6 @@
 {
   "name": "sncf-mobilite",
-  "version": "0.0.14",
+  "version": "0.0.17",
   "main": "main.js",
   "author": "Tralalere SA",
   "scripts": {

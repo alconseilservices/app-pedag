@@ -1,7 +1,6 @@
 /**
  * Propriété d'état pour activer/désactiver le mode développement.
  *
- *
  * Le mode développement permet de mettre en évidence des éléments
  * de l'IHM afin de faciliter le développement et le bug
  */
@@ -22,11 +21,11 @@ export interface Ordered {
   index: number;
 }
 /**
- *
+ * Propriété d'état pour un objet consommé par une quelconque fonction.
  */
 export interface Dirty {
   /**
-   *
+   * true si l'objet est déjo consommé par une quelconque fonction.
    * @required
    */
   dirty?: boolean;
@@ -36,7 +35,7 @@ export interface Dirty {
  */
 export interface Activate {
   /**
-   * Etat de l'objet activable.
+   * true si l'objet est activé.
    * @required
    */
   activ?: boolean;
@@ -52,96 +51,99 @@ export interface Visitable {
   visited?: boolean;
 }
 /**
- *
+ * Permet d'assigner une propriété d'état à un objet avec un tâche-completion.
  */
 export interface Completable {
   /**
-   *
+   * true si la tâche appliquée à l'objet est complétée.
    * @required
    */
   completed?: boolean;
 }
 /**
- *
+ * Définie un fichier vidéo de type mp4 avec une valeur de score min et max.
  */
 export interface ScoredVideo extends Visitable {
   /**
-   *
+   * Nom du fichier sans l'extension.
    */
   file: string;
   /**
-   *
+   * Valeur du score minimum.
    */
   minScore: number;
   /**
-   *
+   * Valeur du score maximum.
    */
   maxScore: number;
 }
 /**
- *
+ * Définit un texte visitable.
  */
 export interface HintText extends Visitable {
   /**
-   *
+   * Valeur du texte.
    */
   value: string;
 }
 /**
- *
+ * Définit une image PNG associée à des coordonnées top/left
+ * et à un facteur échelle appliqué à la heuteur de l'image.
  */
 export interface ImageScaler {
   /**
-   *
+   * Nom du fichier sans l'extension.
    */
   file: string;
   /**
-   *
+   * Position en % par rapport à la limite supérieure du conteneur.
    */
   top: number;
   /**
-   *
+   * Position en % par rapport à la limite gauche du conteneur.
    */
   left: number;
   /**
+   * % appliqué à la hauteur de l'image.
    *
+   * Agit comme un facteur d'agrandissement.
    */
   height: number;
 }
 /**
- *
+ * Représente un objet choix activable.
  */
 export interface Choice extends Activate, Dirty {
   /**
-   *
+   * Texte du choix.
    */
   value: string;
   /**
-   *
+   * true si le choix est valide.
    */
   goodChoice: boolean;
   /**
-   *
+   * valeur du score associé au choix.
    */
   score: number;
   /**
-   *
+   * Nom de l'image illustration sans l'extension associé au choix.
    */
   responseImage: string;
   /**
-   *
+   * Nom de l'image visage-personnage sans l'extension associé au choix.
    */
   responseFace: string;
   /**
-   *
+   * Nom du visage-personnage associé au choix.
    */
   responseFaceName: string;
   /**
-   *
+   * Texte associé au choix.
    */
   responseHint: string;
   /**
-   *
+   * Liste des indices associés aux choix.
    */
   indications?: Indication[];
 }
