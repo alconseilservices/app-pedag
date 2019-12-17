@@ -50,7 +50,7 @@ export const Mission: MobilityMission = {
           responseImage: 'S01_R2',
           responseFace: 'face_frere',
           responseFaceName: 'Le frère',
-          responseHint: 'Bon choix ! Vous aurez toutes les infos',
+          responseHint: 'Bon choix ! Vous aurez toutes les infos.',
         },
         {
           value: 'Vous demandez à votre frère.',
@@ -350,10 +350,10 @@ export const Mission: MobilityMission = {
           value: 'Vous changez à Ermont Eaubonne pour prendre la ligne H.',
           goodChoice: true,
           score: 0,
-          responseImage: 'S06-R02',
+          responseImage: 'S06_R02',
           responseFace: 'face_man',
           responseFaceName: 'Yanis',
-          responseHint: 'Ça y est, on arrive ! Préparez-vous à descendre'
+          responseHint: 'Ça y est, on arrive ! Préparez-vous à descendre.'
         },
         {
           value: 'Vous changez à Ermont Eaubonne pour prendre la ligne J.',
@@ -386,7 +386,7 @@ export const Mission: MobilityMission = {
           responseImage: 'S07_R1',
           responseFace: 'face',
           responseFaceName: 'Inès',
-          responseHint: 'Inès : Je crois qu\'on a raté le train !  '
+          responseHint: 'Je crois qu\'on a raté le train !  '
         },
         {
           value: ' Vous décidez de traverser par les voies.',
@@ -395,7 +395,7 @@ export const Mission: MobilityMission = {
           responseImage: 'S07_R2',
           responseFace: 'face_agent',
           responseFaceName: 'L\'agent SNCF',
-          responseHint: 'Il est très dangereux de traverser les voies! Vous devez passer par le souterrain.',
+          responseHint: 'Il est très dangereux de traverser les voies ! Vous devez passer par le souterrain.',
         },
         {
           value: 'Vous prenez le souterrain tranquillement. ',
@@ -453,7 +453,7 @@ export const Mission: MobilityMission = {
           x: 390,
           y: 140,
            image: {
-            file: 'S08_IC_3',
+            file: 'S08_IC_03',
             left: 0,
             top: 0,
             height: 100
@@ -480,7 +480,7 @@ export const Mission: MobilityMission = {
           x: 920,
           y: 100,
           image: {
-            file: 'S08_IC_4',
+            file: 'S08_IC_04',
             left: 0,
             top: 0,
             height: 100
@@ -614,9 +614,9 @@ export const Mission: MobilityMission = {
               height: 250,
               x: 580,
               y: 350,
-              video: 'S10_IC_01'
+              video:'S10_IC_01'
             }
-          ]
+            ]
         }
       ],
 
