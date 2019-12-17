@@ -1,5 +1,14 @@
 <div class="etapes-qcm-resultat-container"
      [style.background]="resultImage()">
+  <div class="etapes-qcm-resultat-indication-zone"
+     [ngClass]="{'etapes-qcm-resultat-indication-zone-dev': mission.devMode}"
+     *ngFor="let indice of activeChoice?.indications" (click)="showIndice(indice)"
+     [style.left]="computeX(indice)" [style.top]="computeY(indice)"
+     [style.height]="computeHeight(indice)" [style.width]="computeWidth(indice)">
+     <img class="etapes-qcm-resultat-indice"
+     [src]="(!indice.hidden && !indice.visited) ? './assets/icons/Loupe.png' : './assets/icons/interrest_point_anchor.png'"
+      [style.opacity]="computeIndicationVisibility(indice)">
+ </div>
   <div class="etapes-qcm-resultat-hint-container"
        fxLayout="row"
        fxLayoutAlign="start center"
@@ -14,4 +23,30 @@
       <div class="etapes-qcm-resultat-hint-text">{{activeChoice?.responseHint}}</div>
     </div>
   </div>
+</div>
+<div  appSceneElement *ngIf="activeIndice"
+      sceneElWidthRatio="1.79147207241075"
+      [sceneElHeight]="(activeIndice.image || activeIndice.video)? '67.5400390625vh' : ''"
+      sceneElCenterV="true"
+      sceneElCenterH="true"
+      class="etapes-qcm-resultat-modal">
+      <img appSceneElement
+           sceneElTop="15px"
+           sceneElRight="15px"
+           class="etapes-qcm-resultat-modal-close"
+           src="./assets/icons/cross.png"
+           (click)="closeModal()">
+      <div class="etapes-qcm-resultat-modal-inner"
+        fxLayout="column" fxLayoutAlign="end center">
+        <div style="position: relative; width: 75%;" fxFlex *ngIf="activeIndice.video">
+            <app-theme-video-player
+            appSceneElement
+            sceneElWidth="100%"
+            sceneElCenterV="true"
+            [videoPath]="videoPath(activeIndice)"
+            sceneElCenterH="true"></app-theme-video-player>
+        </div>
+        <div style="width: 75%;" fxFlex [style.background]="computeImageAsBg()" *ngIf="activeIndice.image"></div>
+        <div *ngIf="activeIndice.text" class="etapes-qcm-resultat-modal-text" [innerHTML]="activeIndice.text"></div>
+      </div>
 </div>

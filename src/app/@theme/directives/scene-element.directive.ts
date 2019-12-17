@@ -16,6 +16,7 @@ export class SceneElementDirective implements OnInit {
 
   @Input() sceneElInsertX: boolean;
   @Input() sceneElInsertY: boolean;
+  @Input() sceneElInsertInitiatorSelector: string;
 
   @Input() sceneElCenterH: boolean;
   @Input() sceneElCenterV: boolean;
@@ -96,19 +97,24 @@ export class SceneElementDirective implements OnInit {
 
   @HostListener('click', ['$event.target'])
   clickInside(div) {
-    if (this.element.contains(div) && this.sceneElInsertX) {
-      this.element.style.left =  this.sceneElLeft;
-      this.el.nativeElement.dispatchEvent(new CustomEvent('enterScene'));
+    if (this.sceneElInsertX && div.classList.contains(this.sceneElInsertInitiatorSelector)) {
+      if (this.element.style.left ===  '100vw') {
+        this.element.style.left =  this.sceneElLeft;
+        this.el.nativeElement.dispatchEvent(new CustomEvent('enterScene'));
+      } else {
+        this.element.style.left =  '100vw';
+        this.el.nativeElement.dispatchEvent(new CustomEvent('exitScene'));
+      }
     }
   }
 
-  @HostListener('document:click', ['$event.target'])
-  clickOutside(div) {
-    if (!this.element.contains(div) && this.sceneElInsertX) {
-      this.element.style.left =  '100vw';
-      this.el.nativeElement.dispatchEvent(new CustomEvent('exitScene'));
-    }
-  }
+  // @HostListener('document:click', ['$event.target'])
+  // clickOutside(div) {
+  //   if (!this.element.contains(div) && this.sceneElInsertX) {
+  //     this.element.style.left =  '100vw';
+  //     this.el.nativeElement.dispatchEvent(new CustomEvent('exitScene'));
+  //   }
+  // }
 
   /**
    * manage left offset

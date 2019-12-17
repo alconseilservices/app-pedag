@@ -51,6 +51,37 @@ export const Mission: MobilityMission = {
           responseFace: 'face_frere',
           responseFaceName: 'Le frère',
           responseHint: 'L\'appli est pas mal pour préparer son itinéraire.',
+          indications: [
+            {
+              hidden: false,
+              width: 210,
+              height: 90,
+              x: 0,
+              y: 375,
+              text: `
+                Le train fonctionne grâce à l\'électricité qui est acheminée par la caténaire.
+                Il émet peu de gaz à effet de serre. Il est interdit de monter sur un train ou de s'approcher de la caténaire.
+                Le risque électrique est présent 24h/24 et 7j/7 !
+              `,
+              image: {
+                file: 'S02_IC_01',
+                left: 0,
+                top: 0,
+                height: 100
+              }
+            },
+            {
+              hidden: false,
+              width: 320,
+              height: 150,
+              x: 390,
+              y: 350,
+              text: `
+                Le vélo, c'est écologique et pratique. Des abris sécurisés existent
+                pour garer son vélo. On y accède grâce à un abonnement sur la carte Navigo.
+                `,
+            }
+          ]
         },
         {
           value: 'Vous demandez à votre frère.',
@@ -615,7 +646,7 @@ export const Mission: MobilityMission = {
         height: 570,
         x: 990,
         y: 100,
-        video:'S10_IC_01'
+        video: 'S10_IC_01'
       }
       ]
     }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router, Event, NavigationEnd } from '@angular/router';
 import { MissionsService } from 'src/app/@commons/services/missions.service';
 import { MobilityMission } from 'src/app/@commons/models/mobility-mission';
@@ -72,7 +72,11 @@ export class MissionIndexComponent implements OnInit {
     } else if (String(this.router.url).endsWith(Path.ETAPE_QCM_RESULTAT)) {
       return 'etapes/' + this.etapeIndex +  '/' + Path.ETAPE_QCM_DECISION;
     } else if (!isNaN(this.etapeIndex) && this.etapeIndex > 0) {
-      return 'etapes/' + (this.etapeIndex - 1) +  '/' + this.mission.steps[this.etapeIndex - 1].path;
+      if (this.mission.steps[this.etapeIndex - 1].path === Path.ETAPE_QCM_INDEX) {
+        return 'etapes/' + (this.etapeIndex - 1) +  '/' + Path.ETAPE_QCM_RESULTAT;
+      } else {
+        return 'etapes/' + (this.etapeIndex - 1) +  '/' + this.mission.steps[this.etapeIndex - 1].path;
+      }
     } else {
       return 'desc';
     }

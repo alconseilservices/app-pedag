@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
-import { Choice } from 'src/app/@commons/models/generics';
+import { Choice, Indication } from 'src/app/@commons/models/generics';
 import { MobilityMission } from 'src/app/@commons/models/mobility-mission';
 import { MobilityMissionQcm } from 'src/app/@commons/models/mobility-mission-step';
 import { MissionsService } from 'src/app/@commons/services/missions.service';
@@ -17,6 +17,7 @@ export class QcmResultatComponent implements OnInit {
   @Input() etape: MobilityMissionQcm;
   etapeIndex: number;
   activeChoice: Choice;
+  activeIndice: Indication;
 
   choiceStatusLogo: string;
 
@@ -65,6 +66,53 @@ export class QcmResultatComponent implements OnInit {
     if (this.activeChoice) {
       return this.sanitizer.bypassSecurityTrustStyle(
         `url(./assets/mission/${this.activeChoice.responseImage}.png) center / 100% no-repeat`);
+    } else {
+      return undefined;
+    }
+  }
+
+  closeModal() {
+    this.activeIndice = undefined;
+  }
+
+  videoPath(indice: Indication): string {
+    return `./assets/mission/${indice.video}.mp4`;
+  }
+
+  computeIndicationVisibility(indice: Indication): SafeStyle {
+    if (indice.visited || !indice.hidden) {
+      return '1';
+    } else {
+      return '0';
+    }
+  }
+
+  computeWidth(indice: Indication): SafeStyle {
+    return this.sanitizer.bypassSecurityTrustStyle(((indice.width * 100) / 1229) + '%');
+  }
+
+  computeHeight(indice: Indication): SafeStyle {
+    return this.sanitizer.bypassSecurityTrustStyle(((indice.height * 100) / 681) + '%');
+  }
+
+  computeX(indice: Indication): SafeStyle {
+    return this.sanitizer.bypassSecurityTrustStyle(((indice.x * 100) / 1229) + '%');
+  }
+
+  computeY(indice: Indication): SafeStyle {
+    return this.sanitizer.bypassSecurityTrustStyle(((indice.y * 100) / 681) + '%');
+  }
+
+  showIndice(indice: Indication) {
+    indice.visited = true;
+    this.activeIndice = indice;
+  }
+
+  computeImageAsBg(): SafeStyle {
+    if (this.activeIndice) {
+      return this.sanitizer.bypassSecurityTrustStyle(
+        `url(./assets/mission/${this.activeIndice.image.file}.png) center / cover no-repeat`
+      );
     } else {
       return undefined;
     }

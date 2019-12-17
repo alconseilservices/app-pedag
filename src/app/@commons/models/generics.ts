@@ -140,6 +140,10 @@ export interface Choice extends Activate, Dirty {
    *
    */
   responseHint: string;
+  /**
+   *
+   */
+  indications?: Indication[];
 }
 /**
  * Représente les données nécessaires pour afficher une image en fond d'une `div`.
