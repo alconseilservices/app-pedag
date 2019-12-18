@@ -26,6 +26,7 @@
   font-size: 4vh;
   color: white;
   font-family: 'Avenir-Heavy';
+  pointer-events: none;
 }
 
 .theme-header-title-icon {

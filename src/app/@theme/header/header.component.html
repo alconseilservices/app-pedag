@@ -1,4 +1,4 @@
-<div class="theme-header-rec-bg" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+<div class="theme-header-rec-bg"  [attr.title]="''" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
     <img *ngIf="!showIcon" class="theme-header-logo" src="assets/images/Nvx_logo_TN_2019_CMJN_complet 1.png">
     <img *ngIf="showIcon" (click)="goToHome()" class="theme-header-icon" src="assets/icons/header_icon.png">
     <div fxFlex fxLayout="row" *ngIf="title" fxLayoutAlign="center center" fxLayoutGap="15px">

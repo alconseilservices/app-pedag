@@ -19,8 +19,8 @@ export const Mission: MobilityMission = {
   playerScore: 0,
   videoIntro: 'video_intro',
   description: `
-    Aider Yanis et Inès dans leur itinéraire.<br><br>Pour cela,
-    vous devrez faire des choix. Attention à ne pas perdre trop de
+    Conseiller Yanis et Inès dans leur itinéraire.<br><br>Pour cela,
+    vous devrez les aider à faire des choix. Attention à ne pas perdre trop de
     temps afin d'arriver à l'heure à la fête.<br><br>Bonne chance !
     `,
   steps: [
@@ -115,10 +115,10 @@ export const Mission: MobilityMission = {
         },
         {
           hidden: true,
-          width: 70,
-          height: 100,
-          x: 760,
-          y: 420,
+          width: 150,
+          height: 220,
+          x: 80,
+          y: 450,
           text: `
             La marche à pied est le moyen de déplacement le plus utilisé en Ile-de-France.
           `
